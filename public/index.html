@@ -19,7 +19,7 @@ button{font-family:inherit}
 .k-navlink{min-height:44px;display:flex;align-items:center}
 .k-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"media eyebrow" "media head" "media desc" "media buy" "media more";grid-template-rows:auto auto auto auto 1fr;column-gap:72px;row-gap:26px;align-items:start;padding:8px 24px 72px}
 .k-mediawrap{grid-area:media;display:flex;flex-direction:column;gap:22px;min-width:0}
-.k-media{padding:48px 24px 52px}
+.k-media{padding:40px 24px 44px}
 .k-ticker{background:#17130F;color:#EDEAE4;font-size:13px;line-height:1.4;overflow:hidden;white-space:nowrap}
 .k-ticker-track{display:inline-flex;animation:k-tick 90s linear infinite}
 .k-ticker:hover .k-ticker-track{animation-play-state:paused}
@@ -31,7 +31,7 @@ button{font-family:inherit}
 .k-includes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
 .k-includes li{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid #D5D1C9;border-radius:3px}
 .k-includes img{height:48px;width:auto;flex:none;display:block}
-.k-bottle{width:min(72%,270px)}
+.k-bottle{width:min(46%,152px)}
 .k-eyebrow{grid-area:eyebrow;padding-top:36px}
 .k-head{grid-area:head;margin-top:-12px}
 .k-h1{font-size:clamp(34px,4.2vw,52px)}
@@ -55,9 +55,12 @@ button{font-family:inherit}
 .k-price{font-size:24px}
 .k-more{margin-top:6px}
 }
-.k-press img{height:30px;width:auto;max-width:170px;object-fit:contain;filter:grayscale(1) contrast(1.15) !important;mix-blend-mode:multiply;opacity:.78;display:block}
-.k-press .k-tall{height:76px}
-@media (max-width:760px){.k-press img{height:24px;max-width:130px}.k-press .k-tall{height:52px}}
+.k-press{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:32px 48px;max-width:1000px;width:100%;margin:0 auto}
+.k-press>div{display:flex;align-items:center;justify-content:center;min-height:100px}
+.k-press img{height:48px;width:auto;max-width:100%;object-fit:contain;filter:grayscale(1) contrast(1.15) !important;mix-blend-mode:multiply;opacity:.78;display:block}
+.k-press .k-wide{height:34px}
+.k-press .k-tall{height:100px}
+@media (max-width:760px){.k-press{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px}.k-press>div{min-height:76px}.k-press img{height:38px}.k-press .k-wide{height:24px}.k-press .k-tall{height:76px}}
 .k-thumbs{position:absolute;left:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:2}
 .k-thumb{width:64px;padding:6px 4px 5px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:3px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;line-height:1.2;color:#45423E}
 .k-thumb img{height:54px;width:auto;display:block}
@@ -66,6 +69,10 @@ button{font-family:inherit}
 .k-sec{padding-top:76px;padding-bottom:76px}
 .k-sec-s{padding-top:44px;padding-bottom:44px}
 @media (max-width:760px){.k-sec{padding-top:44px;padding-bottom:44px}.k-sec-s{padding-top:30px;padding-bottom:30px}}
+.k-sci{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;row-gap:40px;align-items:end}
+.k-stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 40px}
+.k-sci-note{grid-column:1/-1}
+@media (max-width:760px){.k-sci{grid-template-columns:minmax(0,1fr);row-gap:24px}.k-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
 details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 details[open] .plus-v{display:none}
@@ -179,14 +186,13 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </main>
 
 <section id="peptide" style="background: #17130F; color: #D9D4CC">
-<div class="k-sec" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px 72px; align-items: start">
+<div class="k-sec k-sci" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 14px; color: #D9964F">The science</p>
 <h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #F6F5F2; text-wrap: balance">Peptide-based scalp care.</h2>
 </div>
-<div style="display: flex; flex-direction: column; gap: 28px">
-<p style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 50ch">Klara is made by NIBEC, a KOSDAQ-listed Korean biotech company that has studied regenerative peptides for more than twenty years. Its patented peptides were first developed for clinical use. The same research now goes into a shampoo and a treatment for every day.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 20px 32px; border-top: 1px solid #3A332C; padding-top: 24px">
+<p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Klara is made by NIBEC, a KOSDAQ-listed Korean biotech company that has studied regenerative peptides for more than twenty years. Its patented peptides were first developed for clinical use. The same research now goes into a shampoo and a treatment for every day.</p>
+<div class="k-stats" style="border-top: 1px solid #3A332C; padding-top: 32px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2">20 years</p>
 <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">of regenerative peptide research at NIBEC</p>
@@ -204,19 +210,18 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">NIBEC Co., Ltd. (138610), public since 2011</p>
 </div>
 </div>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">[Study results from NIBEC for the shampoo and treatment: what was measured, number of people, weeks]</p>
-</div>
+<p class="k-sci-note" style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">[Study results from NIBEC for the shampoo and treatment: what was measured, number of people, weeks]</p>
 </div>
 </section>
 
 <section style="background: #ECEAE5">
 <div class="k-sec-s" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-size: 14px; color: #5C5853">Klara skincare, as featured in</p>
-<div class="k-press" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 56px">
-<img src="assets/press-elle.svg" alt="ELLE">
-<img src="assets/press-abc4.png" alt="ABC4">
-<img src="assets/press-lafw.svg" alt="L.A. Fashion Week">
-<img class="k-tall" src="assets/press-best-of-best.png" alt="Best of Best Review">
+<p style="margin: 0; font-size: 14px; color: #5C5853; text-align: center">Klara skincare, as featured in</p>
+<div class="k-press">
+<div><img src="assets/press-elle.svg" alt="ELLE"></div>
+<div><img src="assets/press-abc4.png" alt="ABC4"></div>
+<div><img class="k-wide" src="assets/press-lafw.svg" alt="L.A. Fashion Week"></div>
+<div><img class="k-tall" src="assets/press-best-of-best.png" alt="Best of Best Review"></div>
 </div>
 </div>
 </section>
