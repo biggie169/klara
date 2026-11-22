@@ -1,28 +1,25 @@
 (function () {
   'use strict';
 
-  var PRICE = 100;
-  var state = { qty: 1, bagS: 0, bagT: 0, variant: 's', sub: false, bagOpen: false, ready: false };
+  var PRICE = 100; // one system = shampoo + treatment
+  var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, ready: false };
   var spin = { N: 192, a: 0, v: 0, drawn: -1, dirty: false, drag: null, running: false };
 
   function $all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
   function eur(n) { return '€' + n; }
 
   function vals() {
-    var bag = state.bagS + state.bagT;
+    var bag = state.sys;
     return {
       bag: bag,
       qty: state.qty,
-      vName: state.variant === 't' ? 'Treatment' : 'Shampoo',
-      note: bag > 0 ? bag + (bag === 1 ? ' bottle' : ' bottles') + ' in your bag' : '',
-      bagS: state.bagS, bagT: state.bagT,
-      totS: eur(PRICE * state.bagS), totT: eur(PRICE * state.bagT),
+      sys: bag,
+      note: bag > 0 ? bag + (bag === 1 ? ' system' : ' systems') + ' (shampoo + treatment) in your bag' : '',
       bagTotal: eur(PRICE * bag),
       loading: !state.ready,
       bagOpen: state.bagOpen,
       bagEmpty: bag === 0,
       bagFilled: bag > 0,
-      hasS: state.bagS > 0, hasT: state.bagT > 0,
       subOn: state.sub && bag > 0
     };
   }
@@ -60,15 +57,10 @@
     closeBag: function () { set({ bagOpen: false }); },
     inc: function () { set({ qty: Math.min(9, state.qty + 1) }); },
     dec: function () { set({ qty: Math.max(1, state.qty - 1) }); },
-    add: function () {
-      set(state.variant === 't'
-        ? { bagT: state.bagT + state.qty, bagOpen: true }
-        : { bagS: state.bagS + state.qty, bagOpen: true });
-    },
-    addBoth: function () { set({ bagS: state.bagS + 1, bagT: state.bagT + 1, bagOpen: true }); },
-    subBoth: function () { set({ bagS: Math.max(1, state.bagS), bagT: Math.max(1, state.bagT), sub: true, bagOpen: true }); },
-    rmS: function () { set({ bagS: 0, sub: false }); },
-    rmT: function () { set({ bagT: 0, sub: false }); },
+    add: function () { set({ sys: state.sys + state.qty, bagOpen: true }); },
+    addBoth: function () { set({ sys: state.sys + 1, bagOpen: true }); },
+    subBoth: function () { set({ sys: Math.max(1, state.sys), sub: true, bagOpen: true }); },
+    rm: function () { set({ sys: 0, sub: false }); },
     pickS: function () { pick('s'); },
     pickT: function () { pick('t'); }
   };
