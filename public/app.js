@@ -2,7 +2,7 @@
   'use strict';
 
   var PRICE = 100; // one system = shampoo + treatment
-  var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, ready: false };
+  var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, menuOpen: false, ready: false };
   var spin = { N: 192, a: 0, v: 0, drawn: -1, dirty: false, drag: null, running: false };
 
   function $all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
@@ -18,6 +18,7 @@
       bagTotal: eur(PRICE * bag),
       loading: !state.ready,
       bagOpen: state.bagOpen,
+      menuOpen: state.menuOpen,
       bagEmpty: bag === 0,
       bagFilled: bag > 0,
       subOn: state.sub && bag > 0
@@ -33,18 +34,18 @@
       el.classList.toggle('is-on', on);
       el.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    document.body.style.overflow = state.bagOpen ? 'hidden' : '';
+    document.body.style.overflow = (state.bagOpen || state.menuOpen) ? 'hidden' : '';
   }
 
   function set(patch) {
-    var wasOpen = state.bagOpen;
+    var wasBag = state.bagOpen, wasMenu = state.menuOpen;
     for (var k in patch) { state[k] = patch[k]; }
     render();
-    if (state.bagOpen && !wasOpen) {
-      var close = document.querySelector('#bag [data-act="closeBag"]:not([style*="inset: 0"])');
-      if (close) { close.focus(); }
-    }
+    if (state.bagOpen && !wasBag) { focusIn('#bag [data-act="closeBag"]:not([style*="inset: 0"])'); }
+    if (state.menuOpen && !wasMenu) { focusIn('#menu .k-menu-close'); }
   }
+
+  function focusIn(sel) { var el = document.querySelector(sel); if (el) { el.focus(); } }
 
   function pick(variant) {
     spin.dirty = true;
@@ -53,7 +54,9 @@
   }
 
   var actions = {
-    openBag: function () { set({ bagOpen: true }); },
+    openBag: function () { set({ bagOpen: true, menuOpen: false }); },
+    openMenu: function () { set({ menuOpen: true }); },
+    closeMenu: function () { set({ menuOpen: false }); },
     closeBag: function () { set({ bagOpen: false }); },
     inc: function () { set({ qty: Math.min(9, state.qty + 1) }); },
     dec: function () { set({ qty: Math.max(1, state.qty - 1) }); },
@@ -69,10 +72,10 @@
     var el = e.target.closest('[data-act]');
     if (!el) { return; }
     var fn = actions[el.getAttribute('data-act')];
-    if (fn) { e.preventDefault(); fn(); }
+    if (fn) { if (!el.hasAttribute('data-nav')) { e.preventDefault(); } fn(); }
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && state.bagOpen) { set({ bagOpen: false }); }
+    if (e.key === 'Escape' && (state.bagOpen || state.menuOpen)) { set({ bagOpen: false, menuOpen: false }); }
   });
 
   // 360° bottle spin, drawn from four 8×6 sprite sheets of 248×648 frames.

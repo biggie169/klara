@@ -16,18 +16,18 @@ button{font-family:inherit}
 .klara-cv{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
 .klara-cv:active{cursor:grabbing}
 .k-header{min-height:76px}
-.k-navlink{min-height:44px;display:flex;align-items:center}
+.k-icon-btn{width:44px;height:44px;padding:0;background:transparent;border:0;color:#1A1A1A;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
+.k-badge{position:absolute;top:4px;right:2px;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;border-radius:9px;background:#1A1A1A;color:#F6F5F2;font-size:10.5px;line-height:17px;text-align:center;font-weight:500}
+.k-menu a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid #D5D1C9;font-size:20px;font-weight:300;color:#1A1A1A}
 .k-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"media eyebrow" "media head" "media desc" "media buy" "media more";grid-template-rows:auto auto auto auto 1fr;column-gap:72px;row-gap:26px;align-items:start;padding:8px 24px 72px}
 .k-mediawrap{grid-area:media;display:flex;flex-direction:column;gap:22px;min-width:0}
 .k-media{padding:40px 24px 44px}
 .k-ticker{background:#17130F;color:#EDEAE4;font-size:13px;line-height:1.4;overflow:hidden;white-space:nowrap}
-.k-ticker-track{display:inline-flex;animation:k-tick 90s linear infinite}
-.k-ticker:hover .k-ticker-track{animation-play-state:paused}
+.k-ticker-track{display:inline-flex;animation:k-tick 60s linear infinite;will-change:transform}
 .k-ticker-group{display:inline-flex;flex:none}
 .k-ticker-group span{padding:8px 0}
 .k-ticker-group span::after{content:"\00B7";padding:0 28px;opacity:.5}
 @keyframes k-tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.k-ticker-track{animation:none}.k-ticker{text-align:center}.k-ticker-group[aria-hidden]{display:none}}
 .k-includes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
 .k-includes li{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid #D5D1C9;border-radius:3px}
 .k-includes img{height:48px;width:auto;flex:none;display:block}
@@ -41,7 +41,6 @@ button{font-family:inherit}
 .k-more{grid-area:more;margin-top:10px}
 @media (max-width:760px){
 .k-header{min-height:54px}
-.k-navlink.k-opt{display:none}
 .k-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"media" "eyebrow" "buy" "desc" "more";grid-template-rows:none;row-gap:14px;padding:0 24px 36px}
 .k-media{padding:98px 16px 22px}
 .k-mediawrap{gap:14px}
@@ -85,13 +84,15 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <div class="k-ticker" role="region" aria-label="Announcements"><div class="k-ticker-track"><div class="k-ticker-group"><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span></div><div class="k-ticker-group" aria-hidden="true"><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span><span>Now in Europe for the first time</span><span>Free shipping</span></div></div></div>
 
-<header class="k-header" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 8px 32px">
+<header class="k-header" style="max-width: 1240px; margin: 0 auto; padding: 0 14px; box-sizing: border-box; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center">
+<button type="button" class="k-icon-btn" data-act="openMenu" aria-label="Open menu" aria-haspopup="dialog" style="justify-self: start">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h16M3 11h16M3 16h16"></path></svg>
+</button>
 <a href="#top" style="font-weight: 700; font-size: 22px; letter-spacing: 0.06em; color: #1A1A1A; min-height: 44px; display: flex; align-items: center">KLARA</a>
-<nav aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-size: 14px">
-<a class="k-navlink k-opt" href="#peptide">The science</a>
-<a class="k-navlink k-opt" href="#use">How to use</a>
-<button type="button" class="k-navlink" data-act="openBag" style="background: transparent; border: 0; padding: 0; font-size: 14px; color: #1A1A1A; cursor: pointer">Bag (<span data-t="bag">0</span>)</button>
-</nav>
+<button type="button" class="k-icon-btn" data-act="openBag" aria-label="Bag" style="justify-self: end">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 7.5h14l-1 11.5H5z"></path><path d="M8 7.5V6a3 3 0 0 1 6 0v1.5"></path></svg>
+<span class="k-badge" data-show="bagFilled" data-t="bag" hidden>0</span>
+</button>
 </header>
 
 <main id="top" class="k-hero" style="max-width: 1240px; margin: 0 auto; box-sizing: border-box">
@@ -276,6 +277,25 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <p style="margin: 0">Made in Korea by NIBEC</p>
 <p style="margin: 0">Concept page for review. Not a live store.</p>
 </footer>
+
+<div id="menu" hidden data-show="menuOpen" role="dialog" aria-modal="true" aria-label="Menu" style="position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-start">
+<button type="button" aria-label="Close menu" data-act="closeMenu" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div style="position: relative; width: min(360px, 88%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.06em; color: #1A1A1A">KLARA</p>
+<button type="button" class="k-icon-btn k-menu-close" aria-label="Close menu" data-act="closeMenu" style="margin-right: -12px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+</button>
+</div>
+<nav class="k-menu" aria-label="Main" style="border-top: 1px solid #D5D1C9">
+<a href="#top" data-act="closeMenu" data-nav="1">Shop the system</a>
+<a href="#peptide" data-act="closeMenu" data-nav="1">The science</a>
+<a href="#use" data-act="closeMenu" data-nav="1">How to use</a>
+<a href="#buy" data-act="closeMenu" data-nav="1">Subscribe</a>
+</nav>
+<p style="margin: auto 0 0; font-size: 13px; color: #6B6762">Free shipping · Made in Korea by NIBEC</p>
+</div>
+</div>
 
 <div id="bag" hidden data-show="bagOpen" role="dialog" aria-modal="true" aria-label="Your bag" style="position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-end">
 <button type="button" aria-label="Close bag" data-act="closeBag" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
