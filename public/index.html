@@ -68,15 +68,15 @@ html{scrollbar-gutter:stable}
 .k-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .k-kicker{font-size:15px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
 @media (min-width:761px){.k-kicker{font-size:16px}}
-.k-drawer{position:fixed;inset:0;z-index:50;display:flex;visibility:hidden;pointer-events:none;transition:visibility 0s linear .4s}
+.k-drawer{position:fixed;inset:0;z-index:50;display:flex;visibility:hidden;pointer-events:none;transition:visibility 0s linear .55s}
 .k-drawer.is-open{visibility:visible;pointer-events:auto;transition:visibility 0s}
-.k-scrim{opacity:0;transition:opacity .4s ease}
+.k-scrim{opacity:0;transition:opacity .5s ease}
 .k-drawer.is-open .k-scrim{opacity:1}
-.k-panel{transition:transform .4s cubic-bezier(.22,.61,.36,1);box-shadow:0 0 40px rgba(23,19,15,0)}
+.k-panel{transition:transform .55s cubic-bezier(.32,.72,0,1),box-shadow .55s ease;will-change:transform;box-shadow:0 0 40px rgba(23,19,15,0)}
+.k-drawer.is-open .k-panel{box-shadow:0 0 48px rgba(23,19,15,.18)}
 .k-drawer-left .k-panel{transform:translateX(-100%)}
 .k-drawer-right .k-panel{transform:translateX(100%)}
 .k-drawer.is-open .k-panel{transform:none}
-@media (prefers-reduced-motion:reduce){.k-panel,.k-scrim{transition-duration:.01s}.k-drawer{transition-delay:.01s}}
 details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 details[open] .plus-v{display:none}
