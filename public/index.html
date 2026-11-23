@@ -32,7 +32,8 @@ button{font-family:inherit}
 .k-ticker{background:#17130F;color:#EDEAE4;font-size:13px;line-height:1.4;overflow:hidden;white-space:nowrap}
 .k-ticker-msg{display:inline-block;margin:0;padding:8px 0;transform:translateX(100vw);will-change:transform}
 .k-bottle{width:min(46%,152px)}
-.k-head{grid-area:head;padding-top:28px}
+.k-head{grid-area:head;padding-top:0}
+@media (min-width:761px){.k-h1{margin-top:-0.17em !important}}
 .k-h1{font-size:clamp(34px,4.2vw,52px)}
 .k-desc{grid-area:desc;font-size:17px}
 .k-buy{grid-area:buy;gap:22px}
@@ -66,7 +67,7 @@ button{font-family:inherit}
 .k-sec{padding-top:76px;padding-bottom:76px}
 .k-sec-s{padding-top:44px;padding-bottom:44px}
 @media (max-width:760px){.k-sec{padding-top:44px;padding-bottom:44px}.k-sec-s{padding-top:30px;padding-bottom:30px}}
-.k-sci{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;row-gap:40px;align-items:end}
+.k-sci{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;row-gap:40px;align-items:start}
 .k-stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 40px}
 .k-sci-note{grid-column:1/-1}
 .k-stats-3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -252,7 +253,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <section style="background: #ECEAE5">
 <div class="k-sec-s" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-size: 14px; color: #5C5853; text-align: center" data-i18n="press">Klara skincare, as featured in</p>
+<p class="k-kicker" style="margin: 0; color: #8C4A12; text-align: center" data-i18n="press">Featured in</p>
 <div class="k-press">
 <div><img src="assets/press-elle.svg" alt="ELLE"></div>
 <div><img src="assets/press-abc4.png" alt="ABC4"></div>
