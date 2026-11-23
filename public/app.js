@@ -15,7 +15,7 @@
       bag: bag,
       qty: state.qty,
       sys: bag,
-      note: bag > 0 ? bag + (bag === 1 ? ' system' : ' systems') + ' (shampoo + treatment) in your bag' : '',
+      total: eur(PRICE * state.qty),
       bagTotal: eur((state.sub ? SUB_PRICE : PRICE) * bag) + (state.sub && bag > 0 ? ' / month' : ''),
       loading: !state.ready,
       bagOpen: state.bagOpen,
