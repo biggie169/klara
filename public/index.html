@@ -6,10 +6,17 @@
 <title>Klara Hair Loss Prevention System</title>
 <meta name="description" content="Klara Hair Loss Prevention System: a two-step K-beauty peptide shampoo and treatment, made in Korea by NIBEC.">
 <link rel="icon" href="assets/shampoo.webp" type="image/webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/poppins-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/poppins-latin-300-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/poppins-latin-ext-300-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/poppins-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/poppins-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/poppins-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/poppins-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/poppins-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/poppins-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 body{margin:0;background:#F6F5F2;font-family:Poppins,"Helvetica Neue",Arial,sans-serif;color:#45423E;-webkit-font-smoothing:antialiased}
 a{color:#1A1A1A;text-decoration:none}a:hover{color:#8C4A12}
 button{font-family:inherit}
@@ -78,7 +85,32 @@ html{scrollbar-gutter:stable}
 .k-drawer-right .k-panel{transform:translateX(100%)}
 .k-drawer.is-open .k-panel{transform:none}
 .k-concept{position:fixed;left:0;right:0;bottom:0;z-index:40;margin:0;padding:9px 16px calc(9px + env(safe-area-inset-bottom));background:#8C4A12;color:#F6F5F2;font-size:13px;line-height:1.4;text-align:center}
-body{padding-bottom:calc(38px + env(safe-area-inset-bottom))}
+body{padding-bottom:var(--k-band,38px)}
+.k-lang-btn{min-width:44px;height:44px;padding:0 6px;background:transparent;border:0;color:#1A1A1A;font:inherit;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer}
+.k-langpop{position:absolute;top:46px;right:0;z-index:45;min-width:180px;padding:6px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:4px;box-shadow:0 12px 32px rgba(23,19,15,.12);display:none}
+.k-langpop.is-open{display:block}
+.k-langopt{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 12px;background:transparent;border:0;border-radius:3px;font:inherit;font-size:14px;color:#1A1A1A;text-align:left;cursor:pointer}
+.k-langopt:hover{background:#ECEAE5}
+.k-langopt b{width:22px;font-weight:500;font-size:12.5px;letter-spacing:.08em;color:#5C5853}
+.k-langopt[aria-checked="true"]{background:#E4E1DA}
+.k-menu-langs{display:flex;flex-direction:column;gap:8px}
+.k-menu-label{margin:8px 0 0;font-size:13px;color:#5C5853}
+.k-menu-langlist{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.k-menu-langlist .k-langopt{padding:0;font-size:15px}
+.k-menu-langlist .k-langopt:hover{background:transparent;text-decoration:underline}
+.k-menu-langlist .k-langopt[aria-checked="true"]{background:transparent;font-weight:500}
+.k-foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:8px}
+.k-foot-links button,.k-linkbtn{padding:0;min-height:32px;background:transparent;border:0;font:inherit;font-size:13px;color:#45423E;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.k-cookie{position:fixed;left:16px;right:16px;bottom:calc(var(--k-band,38px) + 8px);z-index:45;max-width:560px;box-sizing:border-box;padding:18px 20px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:6px;box-shadow:0 16px 40px rgba(23,19,15,.16);display:none;flex-direction:column;gap:14px}
+.k-cookie.is-open{display:flex}
+.k-cookie-text{margin:0;font-size:14px;line-height:1.55;color:#45423E}
+.k-cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.k-cbtn{min-height:46px;padding:0 16px;border:1px solid #1A1A1A;border-radius:2px;background:transparent;color:#1A1A1A;font:inherit;font-size:14.5px;font-weight:500;cursor:pointer}
+.k-cbtn-dark{background:#1A1A1A;color:#F6F5F2}
+.k-legal h2{margin:28px 0 6px;font-weight:300;font-size:22px;color:#1A1A1A}
+.k-legal dl{margin:0}
+.k-legal dt{margin:16px 0 2px;font-size:14.5px;font-weight:500;color:#1A1A1A}
+.k-legal dd{margin:0;font-size:14.5px;line-height:1.6;color:#45423E}
 details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 details[open] .plus-v{display:none}
@@ -89,24 +121,28 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <body>
 <div style="background: #F6F5F2; color: #45423E; font-size: 16px; line-height: 1.6">
 
-<div class="k-ticker" role="region" aria-label="Announcements"><p class="k-ticker-msg" aria-live="off">Now in Europe for the first time</p></div>
+<div class="k-ticker" role="region" aria-label="Announcements" data-i18n-aria="aNews"><p class="k-ticker-msg" aria-live="off">Now in Europe for the first time</p></div>
 
 <header class="k-header" style="max-width: 1240px; margin: 0 auto; padding: 0 14px; box-sizing: border-box; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center">
-<button type="button" class="k-icon-btn" data-act="openMenu" aria-label="Open menu" aria-haspopup="dialog" style="justify-self: start">
+<button type="button" class="k-icon-btn" data-act="openMenu" aria-label="Open menu" data-i18n-aria="aOpenMenu" aria-haspopup="dialog" style="justify-self: start">
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h16M3 11h16M3 16h16"></path></svg>
 </button>
 <a href="#top" style="font-weight: 700; font-size: 22px; letter-spacing: 0.06em; color: #1A1A1A; min-height: 44px; display: flex; align-items: center">KLARA</a>
-<button type="button" class="k-icon-btn" data-act="openBag" aria-label="Bag" style="justify-self: end">
+<div style="justify-self: end; display: flex; align-items: center; position: relative">
+<button type="button" class="k-lang-btn" data-act="toggleLang" aria-haspopup="true" aria-expanded="false" aria-label="Language" data-i18n-aria="language"><span data-lang-code>EN</span></button>
+<div class="k-langpop" data-open="langOpen" role="menu" aria-label="Language" data-i18n-aria="language" data-langlist="pop"></div>
+<button type="button" class="k-icon-btn" data-act="openBag" aria-label="Bag" data-i18n-aria="aBag">
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 7.5h14l-1 11.5H5z"></path><path d="M8 7.5V6a3 3 0 0 1 6 0v1.5"></path></svg>
 <span class="k-badge" data-show="bagFilled" data-t="bag" hidden>0</span>
 </button>
+</div>
 </header>
 
 <main id="top" class="k-hero" style="max-width: 1240px; margin: 0 auto; box-sizing: border-box">
 
 
 <div class="k-head" style="display: flex; flex-direction: column">
-<h1 class="k-h1" style="margin: 0; font-weight: 300; line-height: 1.14; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance">The K-beauty peptide system for hair loss</h1>
+<h1 class="k-h1" style="margin: 0; font-weight: 300; line-height: 1.14; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance" data-i18n="h1">The K-beauty peptide system for hair loss</h1>
 </div>
 
 <div class="k-mediawrap">
@@ -114,10 +150,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <div class="k-bottle" style="position: relative; aspect-ratio: 248 / 648">
 <div aria-hidden="true" style="position: absolute; left: 2%; right: 2%; top: 95%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgba(38, 24, 10, 0.42), rgba(38, 24, 10, 0.16) 55%, rgba(38, 24, 10, 0) 100%)"></div>
 <img data-show="loading" src="assets/shampoo.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
-<canvas class="klara-cv" width="248" height="648" role="img" aria-label="Klara Hair Loss Prevention bottle, 30 mL, amber with black cap. Drag to turn." style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
+<canvas class="klara-cv" width="248" height="648" role="img" aria-label="Klara Hair Loss Prevention bottle, 30 mL, amber with black cap. Drag to turn." data-i18n-aria="aBottle" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
 </div>
-<div class="k-thumbs" role="group" aria-label="One package includes">
-<p class="k-thumbs-label" aria-hidden="true">One package includes</p>
+<div class="k-thumbs" role="group" aria-label="One package includes" data-i18n-aria="pkg">
+<p class="k-thumbs-label" aria-hidden="true" data-i18n="pkg">One package includes</p>
 <button type="button" class="k-thumb is-on" aria-pressed="true" data-act="pickS" data-variant="s">
 <img src="assets/shampoo.webp" alt="">
 <span>Shampoo</span>
@@ -139,49 +175,49 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <div id="buy" class="k-buy" style="display: flex; flex-direction: column">
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<div role="group" aria-label="Quantity" style="display: flex; align-items: center; border: 1px solid #BEB9B0; border-radius: 2px; height: 56px">
-<button type="button" aria-label="Decrease quantity" data-act="dec" style="width: 48px; height: 54px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<div role="group" aria-label="Quantity" data-i18n-aria="qty" style="display: flex; align-items: center; border: 1px solid #BEB9B0; border-radius: 2px; height: 56px">
+<button type="button" aria-label="Decrease quantity" data-i18n-aria="aDec" data-act="dec" style="width: 48px; height: 54px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10"></path></svg>
 </button>
 <span aria-live="polite" style="min-width: 28px; text-align: center; font-size: 16px; color: #1A1A1A"><span data-t="qty">1</span></span>
-<button type="button" aria-label="Increase quantity" data-act="inc" style="width: 48px; height: 54px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<button type="button" aria-label="Increase quantity" data-i18n-aria="aInc" data-act="inc" style="width: 48px; height: 54px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10M7 2v10"></path></svg>
 </button>
 </div>
 <button type="button" data-act="add" style="flex: 1 1 170px; height: 56px; background: #1A1A1A; color: #F6F5F2; border: 0; border-radius: 2px; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px" >
-<span>Buy</span>
+<span data-i18n="buy">Buy</span>
 <span aria-hidden="true" style="opacity: 0.5">·</span>
 <span data-show="hasSaving" hidden style="text-decoration: line-through; opacity: 0.55" data-t="totalWas"></span>
 <span data-t="total">€100</span>
 </button>
 </div>
-<p style="margin: 0; font-size: 13.5px; color: #5C5853">Save 10% on 6 packages, 15% on 12.</p>
+<p style="margin: 0; font-size: 13.5px; color: #5C5853" data-i18n="tiers">Save 10% on 6 packages, 15% on 12.</p>
 </div>
 
-<p class="k-desc" style="margin: 0; line-height: 1.6; max-width: 46ch">A two-step, peptide-based system for scalp and hair: a shampoo, then a treatment. Made in Korea by NIBEC and drawn from twenty years of regenerative peptide research. Part of the Klara skincare line, and available in Europe for the first time.</p>
+<p class="k-desc" style="margin: 0; line-height: 1.6; max-width: 46ch" data-i18n="desc">A two-step, peptide-based system for scalp and hair: a shampoo, then a treatment. Made in Korea by NIBEC and drawn from twenty years of regenerative peptide research. Part of the Klara skincare line, and available in Europe for the first time.</p>
 
 <div class="k-more">
 <div style="border-top: 1px solid #D5D1C9">
 <details style="border-bottom: 1px solid #D5D1C9">
 <summary style="min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; color: #1A1A1A">
-<span>Subscribe</span>
+<span data-i18n="subscribe">Subscribe</span>
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10"></path><path class="plus-v" d="M7 2v10"></path></svg>
 </summary>
-<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch">Subscribe and save 15%: the system is delivered every month for €85 per month.</p>
+<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch" data-i18n="subText">Subscribe and save 15%: the system is delivered every month for €85 per month.</p>
 </details>
 <details style="border-bottom: 1px solid #D5D1C9">
 <summary style="min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; color: #1A1A1A">
-<span>Ingredients</span>
+<span data-i18n="ingredients">Ingredients</span>
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10"></path><path class="plus-v" d="M7 2v10"></path></svg>
 </summary>
-<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch">[Full ingredient list (INCI) from NIBEC]</p>
+<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch" data-i18n="ingredientsText">[Full ingredient list (INCI) from NIBEC]</p>
 </details>
 <details style="border-bottom: 1px solid #D5D1C9">
 <summary style="min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; color: #1A1A1A">
-<span>Shipping and returns</span>
+<span data-i18n="shipping">Shipping and returns</span>
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10"></path><path class="plus-v" d="M7 2v10"></path></svg>
 </summary>
-<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch">[Delivery countries, delivery time and returns policy]</p>
+<p style="margin: 0; padding: 0 0 22px; font-size: 14.5px; max-width: 52ch" data-i18n="shippingText">[Delivery countries, delivery time and returns policy]</p>
 </details>
 </div>
 </div>
@@ -190,26 +226,26 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <section id="peptide" style="background: #17130F; color: #D9D4CC">
 <div class="k-sec k-sci" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<p class="k-kicker" style="margin: 0; color: #D9964F">The science</p>
-<h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #F6F5F2; text-wrap: balance">Peptide-based scalp care.</h2>
+<p class="k-kicker" style="margin: 0; color: #D9964F" data-i18n="sciKicker">The science</p>
+<h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #F6F5F2; text-wrap: balance" data-i18n="sciH">Peptide-based scalp care.</h2>
 </div>
-<p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Klara is made by NIBEC, a Korean biotech company that has spent more than twenty years developing peptides and biomaterials for clinical and regenerative use. NIBEC designs and synthesizes its own patented peptides, keeps them stable in its formulations, and manufactures each product in its own GMP facilities.</p>
+<p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch" data-i18n="sciLede">Klara is made by NIBEC, a Korean biotech company that has spent more than twenty years developing peptides and biomaterials for clinical and regenerative use. NIBEC designs and synthesizes its own patented peptides, keeps them stable in its formulations, and manufactures each product in its own GMP facilities.</p>
 <div class="k-stats" style="border-top: 1px solid #3A332C; padding-top: 32px">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2">Clinically proven</p>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">[Study result for the shampoo and treatment: what improved, how many people, over how many weeks]</p>
+<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2" data-i18n="f1t">Clinically proven</p>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6" data-i18n="f1d">[Study result for the shampoo and treatment: what improved, how many people, over how many weeks]</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2">Made in-house</p>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">Patented peptides designed and synthesized by NIBEC</p>
+<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2" data-i18n="f2t">Made in-house</p>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6" data-i18n="f2d">Patented peptides designed and synthesized by NIBEC</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2">GMP-made</p>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">Formulated and produced in NIBEC’s facilities in Korea</p>
+<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2" data-i18n="f3t">GMP-made</p>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6" data-i18n="f3d">Formulated and produced in NIBEC’s facilities in Korea</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2">No finasteride</p>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6">Cosmetic care, not a medicine</p>
+<p style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #F6F5F2" data-i18n="f4t">No finasteride</p>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #B5AFA6" data-i18n="f4d">Cosmetic care, not a medicine</p>
 </div>
 </div>
 </div>
@@ -217,7 +253,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <section style="background: #ECEAE5">
 <div class="k-sec-s" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-size: 14px; color: #5C5853; text-align: center">Klara skincare, as featured in</p>
+<p style="margin: 0; font-size: 14px; color: #5C5853; text-align: center" data-i18n="press">Klara skincare, as featured in</p>
 <div class="k-press">
 <div><img src="assets/press-elle.svg" alt="ELLE"></div>
 <div><img src="assets/press-abc4.png" alt="ABC4"></div>
@@ -230,30 +266,30 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <section id="use">
 <div class="k-sec k-sci" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<p class="k-kicker" style="margin: 0; color: #8C4A12">How to use</p>
-<h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance">Shampoo, then treatment.</h2>
+<p class="k-kicker" style="margin: 0; color: #8C4A12" data-i18n="useKicker">How to use</p>
+<h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance" data-i18n="useH">Shampoo, then treatment.</h2>
 </div>
-<p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Use the two together each time you wash your hair. The whole routine takes a few minutes in the shower.</p>
+<p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch" data-i18n="useLede">Use the two together each time you wash your hair. The whole routine takes a few minutes in the shower.</p>
 <div class="k-stats k-stats-3" style="border-top: 1px solid #D5D1C9; padding-top: 32px">
 <div style="display: flex; align-items: flex-start; gap: 18px">
 <p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">1</p>
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
-<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 1: </span>Shampoo</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">Take an appropriate amount and apply it to your scalp and hair. Gently massage, then rinse thoroughly with clean water.</p>
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr" data-i18n="step" data-n="1">Step 1: </span>Shampoo</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch" data-i18n="s1d">Take an appropriate amount and apply it to your scalp and hair. Gently massage, then rinse thoroughly with clean water.</p>
 </div>
 </div>
 <div style="display: flex; align-items: flex-start; gap: 18px">
 <p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">2</p>
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
-<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 2: </span>Treatment</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">After shampooing, apply an appropriate amount to your hair and gently massage.</p>
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr" data-i18n="step" data-n="2">Step 2: </span>Treatment</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch" data-i18n="s2d">After shampooing, apply an appropriate amount to your hair and gently massage.</p>
 </div>
 </div>
 <div style="display: flex; align-items: flex-start; gap: 18px">
 <p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">3</p>
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
-<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 3: </span>Rinse</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">Leave the treatment on for 2–3 minutes, then rinse thoroughly with lukewarm water.</p>
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr" data-i18n="step" data-n="3">Step 3: </span><span data-i18n="s3t">Rinse</span></h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch" data-i18n="s3d">Leave the treatment on for 2–3 minutes, then rinse thoroughly with lukewarm water.</p>
 </div>
 </div>
 </div>
@@ -267,12 +303,12 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </div>
 <div style="flex: 1 1 420px; max-width: 620px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
 <button type="button" data-act="addBoth" style="min-height: 64px; padding: 10px 16px; background: transparent; color: #1A1A1A; border: 1px solid #1A1A1A; border-radius: 2px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
-<span style="font-size: 15px; font-weight: 500; letter-spacing: 0.02em">One-time purchase</span>
-<span style="font-size: 13px; color: #45423E">€100</span>
+<span style="font-size: 15px; font-weight: 500; letter-spacing: 0.02em" data-i18n="oneTime">One-time purchase</span>
+<span style="font-size: 13px; color: #45423E" data-price="100">€100</span>
 </button>
 <button type="button" data-act="subBoth" style="min-height: 64px; padding: 10px 16px; background: #1A1A1A; color: #F6F5F2; border: 1px solid #1A1A1A; border-radius: 2px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
-<span style="font-size: 15px; font-weight: 500; letter-spacing: 0.02em">Subscribe and save 15%</span>
-<span style="font-size: 13px; color: #D9D4CC">€85 per month</span>
+<span style="font-size: 15px; font-weight: 500; letter-spacing: 0.02em" data-i18n="subSave">Subscribe and save 15%</span>
+<span style="font-size: 13px; color: #D9D4CC" data-i18n="perMonth" data-price="85">€85 per month</span>
 </button>
 </div>
 </div>
@@ -280,40 +316,73 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <footer style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 36px; box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; font-size: 13px; color: #6B6762">
 <p style="margin: 0 0 4px; font-weight: 700; font-size: 16px; letter-spacing: 0.06em; color: #1A1A1A">KLARA</p>
-<p style="margin: 0">Made in Korea by NIBEC</p>
+<p style="margin: 0" data-i18n="madeBy">Made in Korea by NIBEC</p>
+<nav class="k-foot-links" aria-label="Legal" data-i18n-aria="legal">
+<button type="button" data-act="openTerms" data-i18n="terms">Terms of use</button>
+<button type="button" data-act="openPrivacy" data-i18n="privacy">Privacy &amp; cookies</button>
+<button type="button" data-act="cookieSettings" data-i18n="cookieSettings">Cookie settings</button>
+</nav>
 </footer>
 
-<p class="k-concept" role="note">Concept page for review. Not a live store.</p>
+<p class="k-concept" role="note" data-i18n="concept">Concept page for review. Not a live store.</p>
 
-<div id="menu" class="k-drawer k-drawer-left" data-open="menuOpen" role="dialog" aria-modal="true" aria-label="Menu" style="justify-content: flex-start">
-<button type="button" aria-label="Close menu" data-act="closeMenu" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div class="k-cookie" data-open="cookieOpen" role="region" aria-label="Cookies">
+<p class="k-cookie-text"><span data-i18n="cookie">We only store what the site needs to work, like your language. With your permission, we’d also use analytics cookies to see how the site is used.</span> <button type="button" class="k-linkbtn" data-act="openPrivacy" data-i18n="privacy">Privacy &amp; cookies</button></p>
+<div class="k-cookie-actions">
+<button type="button" class="k-cbtn" data-act="consentNo" data-i18n="decline">Decline</button>
+<button type="button" class="k-cbtn k-cbtn-dark" data-act="consentYes" data-i18n="accept">Accept</button>
+</div>
+</div>
+
+<div id="legal" class="k-drawer k-drawer-right" data-open="legalOpen" role="dialog" aria-modal="true" aria-label="Legal" data-i18n-aria="legal" style="justify-content: flex-end">
+<button type="button" aria-label="Close" data-i18n-aria="close" data-act="closeLegal" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div class="k-panel k-legal" style="position: relative; width: min(520px, 100%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 20px 24px 40px; overflow-y: auto">
+<div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
+<p style="margin: 0; font-weight: 300; font-size: 26px; color: #1A1A1A" data-i18n="legal">Legal</p>
+<button type="button" class="k-icon-btn k-legal-close" aria-label="Close" data-i18n-aria="close" data-act="closeLegal" style="margin-right: -12px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+</button>
+</div>
+<h2 id="legal-terms" data-i18n="terms">Terms of use</h2>
+<dl data-legal="termsItems"></dl>
+<h2 id="legal-privacy" data-i18n="privacy">Privacy &amp; cookies</h2>
+<dl data-legal="privacyItems"></dl>
+</div>
+</div>
+
+<div id="menu" class="k-drawer k-drawer-left" data-open="menuOpen" role="dialog" aria-modal="true" aria-label="Menu" data-i18n-aria="aMenu" style="justify-content: flex-start">
+<button type="button" aria-label="Close menu" data-i18n-aria="aCloseMenu" data-act="closeMenu" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
 <div class="k-panel" style="position: relative; width: min(360px, 88%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto">
 <div style="display: flex; align-items: center; justify-content: space-between">
 <p style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.06em; color: #1A1A1A">KLARA</p>
-<button type="button" class="k-icon-btn k-menu-close" aria-label="Close menu" data-act="closeMenu" style="margin-right: -12px">
+<button type="button" class="k-icon-btn k-menu-close" aria-label="Close menu" data-i18n-aria="aCloseMenu" data-act="closeMenu" style="margin-right: -12px">
 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3l10 10M13 3L3 13"></path></svg>
 </button>
 </div>
-<nav class="k-menu" aria-label="Main" style="border-top: 1px solid #D5D1C9">
-<a href="#top" data-act="closeMenu" data-nav="1">Shop the system</a>
-<a href="#peptide" data-act="closeMenu" data-nav="1">The science</a>
-<a href="#use" data-act="closeMenu" data-nav="1">How to use</a>
-<a href="#buy" data-act="closeMenu" data-nav="1">Subscribe</a>
+<nav class="k-menu" aria-label="Main" data-i18n-aria="aMain" style="border-top: 1px solid #D5D1C9">
+<a href="#top" data-act="closeMenu" data-nav="1" data-i18n="menuShop">Shop the system</a>
+<a href="#peptide" data-act="closeMenu" data-nav="1" data-i18n="sciKicker">The science</a>
+<a href="#use" data-act="closeMenu" data-nav="1" data-i18n="useKicker">How to use</a>
+<a href="#buy" data-act="closeMenu" data-nav="1" data-i18n="subscribe">Subscribe</a>
 </nav>
-<p style="margin: auto 0 0; font-size: 13px; color: #6B6762">Free shipping · Made in Korea by NIBEC</p>
+<div class="k-menu-langs">
+<p class="k-menu-label" data-i18n="language">Language</p>
+<div class="k-menu-langlist" data-langlist="menu"></div>
+</div>
+<p style="margin: auto 0 0; font-size: 13px; color: #6B6762" data-i18n="menuFoot">Free shipping · Made in Korea by NIBEC</p>
 </div>
 </div>
 
-<div id="bag" class="k-drawer k-drawer-right" data-open="bagOpen" role="dialog" aria-modal="true" aria-label="Your bag" style="justify-content: flex-end">
-<button type="button" aria-label="Close bag" data-act="closeBag" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div id="bag" class="k-drawer k-drawer-right" data-open="bagOpen" role="dialog" aria-modal="true" aria-label="Your bag" data-i18n-aria="bagTitle" style="justify-content: flex-end">
+<button type="button" aria-label="Close bag" data-i18n-aria="aCloseBag" data-act="closeBag" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
 <div class="k-panel" style="position: relative; width: min(420px, 100%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 24px; overflow-y: auto">
 <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
-<p style="margin: 0; font-weight: 300; font-size: 26px; color: #1A1A1A">Your bag</p>
-<button type="button" aria-label="Close bag" data-act="closeBag" style="width: 44px; height: 44px; margin-right: -14px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<p style="margin: 0; font-weight: 300; font-size: 26px; color: #1A1A1A" data-i18n="bagTitle">Your bag</p>
+<button type="button" aria-label="Close bag" data-i18n-aria="aCloseBag" data-act="closeBag" style="width: 44px; height: 44px; margin-right: -14px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3l10 10M13 3L3 13"></path></svg>
 </button>
 </div>
-<p data-show="bagEmpty" style="margin: 0; font-size: 15px; color: #5C5853; border-top: 1px solid #D5D1C9; padding-top: 24px">Your bag is empty.</p>
+<p data-show="bagEmpty" style="margin: 0; font-size: 15px; color: #5C5853; border-top: 1px solid #D5D1C9; padding-top: 24px" data-i18n="bagEmpty">Your bag is empty.</p>
 
 <div data-show="bagFilled">
 <div style="border-top: 1px solid #D5D1C9; display: flex; flex-direction: column">
@@ -324,22 +393,22 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </div>
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <p style="margin: 0; font-size: 15px; font-weight: 500; color: #1A1A1A">Hair Loss Prevention System</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6B6762">Shampoo · 30 mL<br>Treatment · 30 mL<br>Quantity <span data-t="sys">0</span><span data-t="bagSaving"></span></p>
-<button type="button" data-act="rm" style="align-self: flex-start; min-height: 44px; background: transparent; border: 0; padding: 0; font-size: 13px; color: #5C5853; text-decoration: underline; cursor: pointer">Remove</button>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6B6762">Shampoo · 30 mL<br>Treatment · 30 mL<br><span data-i18n="qty">Quantity</span> <span data-t="sys">0</span><span data-t="bagSaving"></span></p>
+<button type="button" data-act="rm" style="align-self: flex-start; min-height: 44px; background: transparent; border: 0; padding: 0; font-size: 13px; color: #5C5853; text-decoration: underline; cursor: pointer" data-i18n="remove">Remove</button>
 </div>
 <p style="margin: 0; font-size: 15px; color: #1A1A1A" data-t="bagTotal"></p>
 </div>
 
 </div>
-<p data-show="subOn" style="margin: 0; font-size: 14px; color: #45423E">Subscription · save 15%</p>
+<p data-show="subOn" style="margin: 0; font-size: 14px; color: #45423E" data-i18n="subNote">Subscription · save 15%</p>
 
 <div style="display: flex; align-items: baseline; justify-content: space-between">
-<p style="margin: 0; font-size: 15px; color: #1A1A1A">Subtotal</p>
+<p style="margin: 0; font-size: 15px; color: #1A1A1A" data-i18n="subtotal">Subtotal</p>
 <p style="margin: 0; font-size: 20px; color: #1A1A1A" data-t="bagTotal"></p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto">
-<button type="button" style="height: 56px; background: #1A1A1A; color: #F6F5F2; border: 0; border-radius: 2px; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer">Checkout</button>
-<p style="margin: 0; font-size: 13px; color: #6B6762; text-align: center">VAT included. Checkout is a placeholder on this concept page.</p>
+<button type="button" style="height: 56px; background: #1A1A1A; color: #F6F5F2; border: 0; border-radius: 2px; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer" data-i18n="checkout">Checkout</button>
+<p style="margin: 0; font-size: 13px; color: #6B6762; text-align: center" data-i18n="vat">VAT included. Checkout is a placeholder on this concept page.</p>
 </div>
 </div>
 </div>
@@ -347,6 +416,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 
 </div>
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

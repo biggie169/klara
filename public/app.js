@@ -4,11 +4,42 @@
   var PRICE = 100; // one system = shampoo + treatment
   var SUB_PRICE = 85; // per month, 15% off
   var MAX = 12; // a year's supply, per order
-  var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, menuOpen: false, ready: false };
+  var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, menuOpen: false, ready: false,
+    langOpen: false, legalOpen: false, cookieOpen: false };
+  var I18N = window.KLARA_I18N;
+
+  // Saved choices live in this browser only (language, cookie decision).
+  function load(k) { try { return window.localStorage.getItem('klara-' + k); } catch (e) { return null; } }
+  function save(k, v) { try { window.localStorage.setItem('klara-' + k, v); } catch (e) {} }
+
+  function pickLang() {
+    var codes = I18N.langs.map(function (l) { return l.code; });
+    var saved = load('lang');
+    if (saved && codes.indexOf(saved) >= 0) { return saved; }
+    var prefs = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < prefs.length; i++) {
+      var c = String(prefs[i]).slice(0, 2).toLowerCase();
+      if (codes.indexOf(c) >= 0) { return c; }
+    }
+    return 'en';
+  }
+  var lang = pickLang();
+  function info() { return I18N.langs.filter(function (l) { return l.code === lang; })[0]; }
+  function t(key, vars) {
+    var s = (I18N[lang] && I18N[lang][key] != null) ? I18N[lang][key] : I18N.en[key];
+    if (typeof s === 'string' && vars) {
+      s = s.replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
+    }
+    return s;
+  }
   var spin = { N: 192, a: 0, v: 0, drawn: -1, dirty: false, drag: null, running: false };
 
   function $all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
-  function eur(n) { return '€' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function eur(n) {
+    try {
+      return new Intl.NumberFormat(info().locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+    } catch (e) { return '€' + n; }
+  }
   // One-time tiers: 6 packages (half a year) save 10%, 12 (a year) save 15%.
   function unit(n) { return n >= 12 ? 85 : n >= 6 ? 90 : PRICE; }
   function saving(n) { return n >= 12 ? 15 : n >= 6 ? 10 : 0; }
@@ -22,11 +53,14 @@
       total: eur(unit(state.qty)) + (state.qty > 1 ? ' \u00D7 ' + state.qty : ''),
       totalWas: saving(state.qty) ? eur(PRICE) : '',
       hasSaving: !!saving(state.qty),
-      bagSaving: !state.sub && saving(bag) ? ' \u00B7 save ' + saving(bag) + '%' : '',
-      bagTotal: eur((state.sub ? SUB_PRICE : unit(bag)) * bag) + (state.sub && bag > 0 ? ' / month' : ''),
+      bagSaving: !state.sub && saving(bag) ? ' \u00B7 ' + t('saveN', { n: saving(bag) }) : '',
+      bagTotal: eur((state.sub ? SUB_PRICE : unit(bag)) * bag) + (state.sub && bag > 0 ? t('perMonthShort') : ''),
       loading: !state.ready,
       bagOpen: state.bagOpen,
       menuOpen: state.menuOpen,
+      langOpen: state.langOpen,
+      legalOpen: state.legalOpen,
+      cookieOpen: state.cookieOpen,
       bagEmpty: bag === 0,
       bagFilled: bag > 0,
       subOn: state.sub && bag > 0
@@ -47,15 +81,65 @@
       el.classList.toggle('is-on', on);
       el.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    document.body.style.overflow = (state.bagOpen || state.menuOpen) ? 'hidden' : '';
+    document.body.style.overflow = (state.bagOpen || state.menuOpen || state.legalOpen) ? 'hidden' : '';
+    var lb = document.querySelector('.k-lang-btn');
+    if (lb) { lb.setAttribute('aria-expanded', state.langOpen ? 'true' : 'false'); }
   }
 
+  // Fill every translatable spot on the page for the current language.
+  function translate() {
+    document.documentElement.lang = lang;
+    $all('[data-i18n]').forEach(function (el) {
+      var n = el.getAttribute('data-n'), p = el.getAttribute('data-price');
+      el.textContent = t(el.getAttribute('data-i18n'), { n: n, price: p && eur(+p), sub: eur(SUB_PRICE) });
+    });
+    $all('[data-price]:not([data-i18n])').forEach(function (el) { el.textContent = eur(+el.getAttribute('data-price')); });
+    $all('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
+    $all('[data-lang-code]').forEach(function (el) { el.textContent = lang.toUpperCase(); });
+    $all('[data-legal]').forEach(function (dl) {
+      dl.textContent = '';
+      t(dl.getAttribute('data-legal')).forEach(function (item) {
+        var parts = item.split('|');
+        var dt = document.createElement('dt'); dt.textContent = parts[0];
+        var dd = document.createElement('dd'); dd.textContent = parts[1];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+    });
+    $all('[data-langlist]').forEach(function (box) {
+      box.textContent = '';
+      I18N.langs.forEach(function (l) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'k-langopt';
+        b.setAttribute('role', box.getAttribute('data-langlist') === 'pop' ? 'menuitemradio' : 'radio');
+        b.setAttribute('aria-checked', l.code === lang ? 'true' : 'false');
+        b.setAttribute('data-act', 'setLang');
+        b.setAttribute('data-lang', l.code);
+        b.setAttribute('lang', l.code);
+        var code = document.createElement('b'); code.textContent = l.code.toUpperCase();
+        b.appendChild(code);
+        b.appendChild(document.createTextNode(l.name));
+        box.appendChild(b);
+      });
+    });
+    restartTicker();
+    sizeBand();
+  }
+
+  // Keep the page and cookie banner clear of the bottom disclaimer band, whatever its height.
+  function sizeBand() {
+    var band = document.querySelector('.k-concept');
+    if (band) { document.documentElement.style.setProperty('--k-band', band.offsetHeight + 'px'); }
+  }
+  window.addEventListener('resize', sizeBand);
+
   function set(patch) {
-    var wasBag = state.bagOpen, wasMenu = state.menuOpen;
+    var wasBag = state.bagOpen, wasMenu = state.menuOpen, wasLegal = state.legalOpen;
     for (var k in patch) { state[k] = patch[k]; }
     render();
     if (state.bagOpen && !wasBag) { focusIn('#bag [data-act="closeBag"]:not([style*="inset: 0"])'); }
     if (state.menuOpen && !wasMenu) { focusIn('#menu .k-menu-close'); }
+    if (state.legalOpen && !wasLegal) { focusIn('#legal .k-legal-close'); }
   }
 
   function focusIn(sel) { var el = document.querySelector(sel); if (el) { el.focus(); } }
@@ -78,17 +162,42 @@
     subBoth: function () { set({ sys: Math.max(1, state.sys), sub: true, bagOpen: true }); },
     rm: function () { set({ sys: 0, sub: false }); },
     pickS: function () { pick('s'); },
-    pickT: function () { pick('t'); }
+    pickT: function () { pick('t'); },
+    toggleLang: function () { set({ langOpen: !state.langOpen }); },
+    setLang: function (el) {
+      lang = el.getAttribute('data-lang');
+      save('lang', lang);
+      translate();
+      set({ langOpen: false, menuOpen: false });
+    },
+    openTerms: function () { openLegal('legal-terms'); },
+    openPrivacy: function () { openLegal('legal-privacy'); },
+    closeLegal: function () { set({ legalOpen: false }); },
+    consentYes: function () { save('consent', 'accepted'); set({ cookieOpen: false }); },
+    consentNo: function () { save('consent', 'declined'); set({ cookieOpen: false }); },
+    cookieSettings: function () { set({ cookieOpen: true }); }
   };
+
+  function openLegal(id) {
+    set({ legalOpen: true, menuOpen: false, langOpen: false });
+    var panel = document.querySelector('#legal .k-panel'), target = document.getElementById(id);
+    if (panel && target) { panel.scrollTop = id === 'legal-terms' ? 0 : target.offsetTop - 16; }
+  }
 
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-act]');
     if (!el) { return; }
     var fn = actions[el.getAttribute('data-act')];
-    if (fn) { if (!el.hasAttribute('data-nav')) { e.preventDefault(); } fn(); }
+    if (fn) { if (!el.hasAttribute('data-nav')) { e.preventDefault(); } fn(el); }
+  });
+  // Close the language list when tapping anywhere else.
+  document.addEventListener('click', function (e) {
+    if (state.langOpen && !e.target.closest('.k-langpop, .k-lang-btn')) { set({ langOpen: false }); }
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && (state.bagOpen || state.menuOpen)) { set({ bagOpen: false, menuOpen: false }); }
+    if (e.key === 'Escape' && (state.bagOpen || state.menuOpen || state.langOpen || state.legalOpen)) {
+      set({ bagOpen: false, menuOpen: false, langOpen: false, legalOpen: false });
+    }
   });
 
   // 360° bottle spin, drawn from four 8×6 sprite sheets of 248×648 frames.
@@ -172,23 +281,28 @@
   }
 
   // Ticker: one message crosses the screen at a time, then the next one starts.
-  (function ticker() {
-    var el = document.querySelector('.k-ticker-msg');
+  var tick = { el: document.querySelector('.k-ticker-msg'), i: 0, anim: null };
+  function runTicker() {
+    var el = tick.el;
     if (!el || !el.animate) { return; }
-    var msgs = ['Now in Europe for the first time', 'Free shipping'];
-    var i = 0, SPEED = 90; // px per second
-    function run() {
-      el.textContent = msgs[i];
-      var w = window.innerWidth, tw = el.offsetWidth;
-      var anim = el.animate(
-        [{ transform: 'translateX(' + w + 'px)' }, { transform: 'translateX(' + (-tw) + 'px)' }],
-        { duration: (w + tw) / SPEED * 1000, easing: 'linear' }
-      );
-      anim.onfinish = function () { i = (i + 1) % msgs.length; run(); };
-    }
-    run();
-  })();
+    el.textContent = t(tick.i === 0 ? 'ticker1' : 'ticker2');
+    var w = window.innerWidth, tw = el.offsetWidth, SPEED = 90; // px per second
+    tick.anim = el.animate(
+      [{ transform: 'translateX(' + w + 'px)' }, { transform: 'translateX(' + (-tw) + 'px)' }],
+      { duration: (w + tw) / SPEED * 1000, easing: 'linear' }
+    );
+    tick.anim.onfinish = function () { tick.i = 1 - tick.i; runTicker(); };
+  }
+  function restartTicker() {
+    if (tick.anim) { tick.anim.onfinish = null; tick.anim.cancel(); }
+    tick.i = 0;
+    runTicker();
+  }
 
+  // GDPR: ask once; nothing optional is loaded unless the visitor accepts.
+  state.cookieOpen = !load('consent');
+
+  translate();
   render();
   boot();
 })();
