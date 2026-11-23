@@ -30,6 +30,11 @@
     var v = vals();
     $all('[data-t]').forEach(function (el) { el.textContent = v[el.getAttribute('data-t')]; });
     $all('[data-show]').forEach(function (el) { el.hidden = !v[el.getAttribute('data-show')]; });
+    $all('[data-open]').forEach(function (el) {
+      var open = !!v[el.getAttribute('data-open')];
+      el.classList.toggle('is-open', open);
+      el.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
     $all('.k-thumb').forEach(function (el) {
       var on = el.getAttribute('data-variant') === state.variant;
       el.classList.toggle('is-on', on);

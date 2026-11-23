@@ -64,6 +64,18 @@ button{font-family:inherit}
 .k-sci-note{grid-column:1/-1}
 .k-stats-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:760px){.k-sci{grid-template-columns:minmax(0,1fr);row-gap:24px}.k-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.k-stats-3{grid-template-columns:minmax(0,1fr);gap:28px}}
+html{scrollbar-gutter:stable}
+.k-kicker{font-size:15px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
+@media (min-width:761px){.k-kicker{font-size:16px}}
+.k-drawer{position:fixed;inset:0;z-index:50;display:flex;visibility:hidden;pointer-events:none;transition:visibility 0s linear .4s}
+.k-drawer.is-open{visibility:visible;pointer-events:auto;transition:visibility 0s}
+.k-scrim{opacity:0;transition:opacity .4s ease}
+.k-drawer.is-open .k-scrim{opacity:1}
+.k-panel{transition:transform .4s cubic-bezier(.22,.61,.36,1);box-shadow:0 0 40px rgba(23,19,15,0)}
+.k-drawer-left .k-panel{transform:translateX(-100%)}
+.k-drawer-right .k-panel{transform:translateX(100%)}
+.k-drawer.is-open .k-panel{transform:none}
+@media (prefers-reduced-motion:reduce){.k-panel,.k-scrim{transition-duration:.01s}.k-drawer{transition-delay:.01s}}
 details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 details[open] .plus-v{display:none}
@@ -174,7 +186,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <section id="peptide" style="background: #17130F; color: #D9D4CC">
 <div class="k-sec k-sci" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #D9964F">The science</p>
+<p class="k-kicker" style="margin: 0; color: #D9964F">The science</p>
 <h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #F6F5F2; text-wrap: balance">Peptide-based scalp care.</h2>
 </div>
 <p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Klara is made by NIBEC, a Korean biotech company that has spent more than twenty years developing peptides and biomaterials for clinical and regenerative use. NIBEC designs and synthesizes its own patented peptides, keeps them stable in its formulations, and manufactures each product in its own GMP facilities.</p>
@@ -215,23 +227,23 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <section id="use">
 <div class="k-sec k-sci" style="max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; box-sizing: border-box">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-size: 14px; color: #8C4A12">How to use</p>
+<p class="k-kicker" style="margin: 0; color: #8C4A12">How to use</p>
 <h2 style="margin: 0; font-weight: 300; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.16; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance">Shampoo, then treatment.</h2>
 </div>
 <p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Use the two together each time you wash your hair. The whole routine takes a few minutes in the shower.</p>
 <div class="k-stats k-stats-3" style="border-top: 1px solid #D5D1C9; padding-top: 32px">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 13.5px; color: #8C4A12">Step 1</p>
+<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 1</p>
 <h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Shampoo</h3>
 <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">Take an appropriate amount and apply it to your scalp and hair. Gently massage, then rinse thoroughly with clean water.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 13.5px; color: #8C4A12">Step 2</p>
+<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 2</p>
 <h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Treatment</h3>
 <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">After shampooing, apply an appropriate amount to your hair and gently massage.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 13.5px; color: #8C4A12">Step 3</p>
+<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 3</p>
 <h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Rinse</h3>
 <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">Leave the treatment on for 2–3 minutes, then rinse thoroughly with lukewarm water.</p>
 </div>
@@ -263,9 +275,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <p style="margin: 0">Concept page for review. Not a live store.</p>
 </footer>
 
-<div id="menu" hidden data-show="menuOpen" role="dialog" aria-modal="true" aria-label="Menu" style="position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-start">
-<button type="button" aria-label="Close menu" data-act="closeMenu" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
-<div style="position: relative; width: min(360px, 88%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto">
+<div id="menu" class="k-drawer k-drawer-left" data-open="menuOpen" role="dialog" aria-modal="true" aria-label="Menu" style="justify-content: flex-start">
+<button type="button" aria-label="Close menu" data-act="closeMenu" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div class="k-panel" style="position: relative; width: min(360px, 88%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto">
 <div style="display: flex; align-items: center; justify-content: space-between">
 <p style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.06em; color: #1A1A1A">KLARA</p>
 <button type="button" class="k-icon-btn k-menu-close" aria-label="Close menu" data-act="closeMenu" style="margin-right: -12px">
@@ -282,9 +294,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </div>
 </div>
 
-<div id="bag" hidden data-show="bagOpen" role="dialog" aria-modal="true" aria-label="Your bag" style="position: fixed; inset: 0; z-index: 50; display: flex; justify-content: flex-end">
-<button type="button" aria-label="Close bag" data-act="closeBag" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
-<div style="position: relative; width: min(420px, 100%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 24px; overflow-y: auto">
+<div id="bag" class="k-drawer k-drawer-right" data-open="bagOpen" role="dialog" aria-modal="true" aria-label="Your bag" style="justify-content: flex-end">
+<button type="button" aria-label="Close bag" data-act="closeBag" class="k-scrim" style="position: absolute; inset: 0; width: 100%; height: 100%; background: rgba(23, 19, 15, 0.38); border: 0; padding: 0; cursor: pointer"></button>
+<div class="k-panel" style="position: relative; width: min(420px, 100%); height: 100%; box-sizing: border-box; background: #F6F5F2; padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 24px; overflow-y: auto">
 <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px">
 <p style="margin: 0; font-weight: 300; font-size: 26px; color: #1A1A1A">Your bag</p>
 <button type="button" aria-label="Close bag" data-act="closeBag" style="width: 44px; height: 44px; margin-right: -14px; background: transparent; border: 0; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
