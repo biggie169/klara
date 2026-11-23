@@ -158,6 +158,24 @@
     }
   }
 
+  // Ticker: one message crosses the screen at a time, then the next one starts.
+  (function ticker() {
+    var el = document.querySelector('.k-ticker-msg');
+    if (!el || !el.animate) { return; }
+    var msgs = ['Now in Europe for the first time', 'Free shipping'];
+    var i = 0, SPEED = 90; // px per second
+    function run() {
+      el.textContent = msgs[i];
+      var w = window.innerWidth, tw = el.offsetWidth;
+      var anim = el.animate(
+        [{ transform: 'translateX(' + w + 'px)' }, { transform: 'translateX(' + (-tw) + 'px)' }],
+        { duration: (w + tw) / SPEED * 1000, easing: 'linear' }
+      );
+      anim.onfinish = function () { i = (i + 1) % msgs.length; run(); };
+    }
+    run();
+  })();
+
   render();
   boot();
 })();
