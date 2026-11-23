@@ -122,6 +122,16 @@
         box.appendChild(b);
       });
     });
+    $all('[data-langselect]').forEach(function (sel) {
+      sel.textContent = '';
+      I18N.langs.forEach(function (l) {
+        var o = document.createElement('option');
+        o.value = l.code;
+        o.textContent = l.code.toUpperCase() + '  ' + l.name;
+        o.selected = l.code === lang;
+        sel.appendChild(o);
+      });
+    });
     restartTicker();
     sizeBand();
   }
@@ -189,6 +199,13 @@
     if (!el) { return; }
     var fn = actions[el.getAttribute('data-act')];
     if (fn) { if (!el.hasAttribute('data-nav')) { e.preventDefault(); } fn(el); }
+  });
+  document.addEventListener('change', function (e) {
+    if (!e.target.matches('[data-langselect]')) { return; }
+    lang = e.target.value;
+    save('lang', lang);
+    translate();
+    render();
   });
   // Close the language list when tapping anywhere else.
   document.addEventListener('click', function (e) {

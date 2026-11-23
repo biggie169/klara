@@ -87,18 +87,16 @@ html{scrollbar-gutter:stable}
 .k-concept{position:fixed;left:0;right:0;bottom:0;z-index:40;margin:0;padding:9px 16px calc(9px + env(safe-area-inset-bottom));background:#8C4A12;color:#F6F5F2;font-size:13px;line-height:1.4;text-align:center}
 body{padding-bottom:var(--k-band,38px)}
 .k-lang-btn{min-width:44px;height:44px;padding:0 6px;background:transparent;border:0;color:#1A1A1A;font:inherit;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer}
-.k-langpop{position:absolute;top:46px;right:0;z-index:45;min-width:180px;padding:6px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:4px;box-shadow:0 12px 32px rgba(23,19,15,.12);display:none}
-.k-langpop.is-open{display:block}
+.k-langpop{position:absolute;top:46px;right:0;z-index:45;min-width:180px;padding:6px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:4px;box-shadow:0 12px 32px rgba(23,19,15,.12);visibility:hidden;opacity:0;transform:translateY(-10px);clip-path:inset(0 0 100% 0 round 4px);transition:opacity .3s ease,transform .45s cubic-bezier(.32,.72,0,1),clip-path .45s cubic-bezier(.32,.72,0,1),visibility 0s linear .45s}
+.k-langpop.is-open{visibility:visible;opacity:1;transform:none;clip-path:inset(0 0 0 0 round 4px);transition:opacity .25s ease,transform .45s cubic-bezier(.32,.72,0,1),clip-path .45s cubic-bezier(.32,.72,0,1),visibility 0s}
 .k-langopt{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 12px;background:transparent;border:0;border-radius:3px;font:inherit;font-size:14px;color:#1A1A1A;text-align:left;cursor:pointer}
 .k-langopt:hover{background:#ECEAE5}
 .k-langopt b{width:22px;font-weight:500;font-size:12.5px;letter-spacing:.08em;color:#5C5853}
 .k-langopt[aria-checked="true"]{background:#E4E1DA}
-.k-menu-langs{display:flex;flex-direction:column;gap:8px}
-.k-menu-label{margin:8px 0 0;font-size:13px;color:#5C5853}
-.k-menu-langlist{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
-.k-menu-langlist .k-langopt{padding:0;font-size:15px}
-.k-menu-langlist .k-langopt:hover{background:transparent;text-decoration:underline}
-.k-menu-langlist .k-langopt[aria-checked="true"]{background:transparent;font-weight:500}
+.k-menu-lang{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;border-bottom:1px solid #D5D1C9;font-size:15px;color:#5C5853}
+.k-select{position:relative;display:flex;align-items:center;color:#1A1A1A}
+.k-select select{appearance:none;-webkit-appearance:none;min-height:44px;padding:0 26px 0 12px;background:transparent;border:1px solid #D5D1C9;border-radius:3px;font:inherit;font-size:15px;color:#1A1A1A;cursor:pointer}
+.k-select svg{position:absolute;right:9px;pointer-events:none}
 .k-foot-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:8px}
 .k-foot-links button,.k-linkbtn{padding:0;min-height:32px;background:transparent;border:0;font:inherit;font-size:13px;color:#45423E;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .k-cookie{position:fixed;left:16px;right:16px;bottom:calc(var(--k-band,38px) + 8px);z-index:45;max-width:560px;box-sizing:border-box;padding:18px 20px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:6px;box-shadow:0 16px 40px rgba(23,19,15,.16);display:none;flex-direction:column;gap:14px}
@@ -365,10 +363,13 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <a href="#use" data-act="closeMenu" data-nav="1" data-i18n="useKicker">How to use</a>
 <a href="#buy" data-act="closeMenu" data-nav="1" data-i18n="subscribe">Subscribe</a>
 </nav>
-<div class="k-menu-langs">
-<p class="k-menu-label" data-i18n="language">Language</p>
-<div class="k-menu-langlist" data-langlist="menu"></div>
-</div>
+<label class="k-menu-lang">
+<span data-i18n="language">Language</span>
+<span class="k-select">
+<select data-langselect></select>
+<svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2.5 4.5L6 8l3.5-3.5"></path></svg>
+</span>
+</label>
 <p style="margin: auto 0 0; font-size: 13px; color: #6B6762" data-i18n="menuFoot">Free shipping · Made in Korea by NIBEC</p>
 </div>
 </div>
