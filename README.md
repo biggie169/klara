@@ -14,6 +14,8 @@ After any change to `src/index.html` or `public/i18n.js`:
 
     SITE_URL=https://your-domain node build.js
 
+The site is hidden from search engines until launch (a `noindex` tag on every page and an `X-Robots-Tag` header via `public/_headers`). At launch, build with `ALLOW_INDEXING=1` to remove both.
+
 Leave out `SITE_URL` until the live domain is known; the canonical, hreflang and sitemap entries need it. Commit the generated `public/` files: Cloudflare serves them as they are.
 
 ## Run locally

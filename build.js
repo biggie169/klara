@@ -17,6 +17,8 @@ const ROOT = __dirname;
 const PUBLIC = path.join(ROOT, 'public');
 const TEMPLATE = path.join(ROOT, 'src', 'index.html');
 const SITE = (process.env.SITE_URL || '').replace(/\/+$/, '');
+// Hidden from search engines until launch. Build with ALLOW_INDEXING=1 to go public.
+const INDEXABLE = process.env.ALLOW_INDEXING === '1';
 
 global.window = {};
 eval(fs.readFileSync(path.join(PUBLIC, 'i18n.js'), 'utf8'));
@@ -58,7 +60,7 @@ async function main() {
     await page.goto(origin + pathFor(l.code), { waitUntil: 'networkidle' });
     await page.waitForSelector('[data-faq] details');
 
-    const html = await page.evaluate(({ site, langs, code, pathFor1, ticker }) => {
+    const html = await page.evaluate(({ site, langs, code, ticker, indexable }) => {
       const pathFor = (c) => (c === 'en' ? '/' : `/${c}/`);
       // Back to the state a fresh visitor sees before the script runs.
       document.querySelectorAll('.is-open').forEach((el) => el.classList.remove('is-open'));
@@ -85,8 +87,10 @@ async function main() {
         if (img) img.setAttribute('content', abs('/assets/shampoo.webp'));
       }
       add('meta', { property: 'og:locale', content: langs.find((x) => x.code === code).locale.replace('-', '_') });
+      head.querySelectorAll('meta[name="robots"]').forEach((el) => el.remove());
+      if (!indexable) add('meta', { name: 'robots', content: 'noindex, nofollow' });
       return '<!doctype html>\n' + document.documentElement.outerHTML + '\n';
-    }, { site: SITE, langs: LANGS, code: l.code, ticker: I18N[l.code].ticker1 });
+    }, { site: SITE, langs: LANGS, code: l.code, ticker: I18N[l.code].ticker1, indexable: INDEXABLE });
 
     const out = html.split(origin).join(SITE);
     const dir = l.code === 'en' ? PUBLIC : path.join(PUBLIC, l.code);
@@ -103,6 +107,11 @@ async function main() {
   const robots = ['User-agent: *', 'Allow: /'];
   if (SITE) robots.push('', `Sitemap: ${SITE}/sitemap.xml`);
   fs.writeFileSync(path.join(PUBLIC, 'robots.txt'), robots.join('\n') + '\n');
+  // Same signal as an HTTP header, which also covers images and other files.
+  const headersFile = path.join(PUBLIC, '_headers');
+  if (INDEXABLE) { if (fs.existsSync(headersFile)) fs.unlinkSync(headersFile); }
+  else { fs.writeFileSync(headersFile, '/*\n  X-Robots-Tag: noindex, nofollow\n'); }
+  console.log(INDEXABLE ? 'Indexing allowed.' : 'Hidden from search engines (noindex). Build with ALLOW_INDEXING=1 at launch.');
   if (SITE) {
     const today = new Date().toISOString().slice(0, 10);
     const alts = LANGS.map((x) => `    <xhtml:link rel="alternate" hreflang="${x.code}" href="${SITE}${pathFor(x.code)}"/>`).join('\n') +
