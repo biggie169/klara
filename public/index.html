@@ -19,17 +19,13 @@ button{font-family:inherit}
 .k-icon-btn{width:44px;height:44px;padding:0;background:transparent;border:0;color:#1A1A1A;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
 .k-badge{position:absolute;top:4px;right:2px;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;border-radius:9px;background:#1A1A1A;color:#F6F5F2;font-size:10.5px;line-height:17px;text-align:center;font-weight:500}
 .k-menu a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid #D5D1C9;font-size:20px;font-weight:300;color:#1A1A1A}
-.k-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"media eyebrow" "media head" "media desc" "media buy" "media more";grid-template-rows:auto auto auto auto 1fr;column-gap:72px;row-gap:26px;align-items:start;padding:8px 24px 72px}
+.k-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"media head" "media desc" "media buy" "media more";grid-template-rows:auto auto auto 1fr;column-gap:72px;row-gap:26px;align-items:start;padding:8px 24px 72px}
 .k-mediawrap{grid-area:media;display:flex;flex-direction:column;gap:22px;min-width:0}
 .k-media{padding:40px 24px 44px}
 .k-ticker{background:#17130F;color:#EDEAE4;font-size:13px;line-height:1.4;overflow:hidden;white-space:nowrap}
 .k-ticker-msg{display:inline-block;margin:0;padding:8px 0;transform:translateX(100vw);will-change:transform}
-.k-includes{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
-.k-includes li{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid #D5D1C9;border-radius:3px}
-.k-includes img{height:48px;width:auto;flex:none;display:block}
 .k-bottle{width:min(46%,152px)}
-.k-eyebrow{grid-area:eyebrow;padding-top:36px}
-.k-head{grid-area:head;margin-top:-12px}
+.k-head{grid-area:head;padding-top:28px}
 .k-h1{font-size:clamp(34px,4.2vw,52px)}
 .k-desc{grid-area:desc;font-size:17px}
 .k-buy{grid-area:buy;gap:22px}
@@ -37,12 +33,10 @@ button{font-family:inherit}
 .k-more{grid-area:more;margin-top:10px}
 @media (max-width:760px){
 .k-header{min-height:54px}
-.k-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"media" "eyebrow" "buy" "desc" "more";grid-template-rows:none;row-gap:14px;padding:0 24px 36px}
+.k-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"media" "buy" "desc" "more";grid-template-rows:none;row-gap:14px;padding:0 24px 36px}
 .k-media{padding:98px 16px 22px}
 .k-mediawrap{gap:14px}
-.k-includes img{height:44px}
 .k-bottle{width:100px}
-.k-eyebrow{padding-top:0}
 .k-head{grid-area:media;position:relative;z-index:1;margin-top:0;padding:18px 18px 0;pointer-events:none}
 .k-h1{font-size:24px}
 .k-desc{font-size:15.5px;margin-top:10px}
@@ -56,11 +50,12 @@ button{font-family:inherit}
 .k-press .k-wide{height:34px}
 .k-press .k-tall{height:100px}
 @media (max-width:760px){.k-press{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 24px}.k-press>div{min-height:76px}.k-press img{height:38px}.k-press .k-wide{height:24px}.k-press .k-tall{height:76px}}
-.k-thumbs{position:absolute;left:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:2}
+.k-thumbs{position:absolute;left:20px;bottom:20px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;z-index:2}
+.k-thumbs-label{margin:0 0 -2px;font-size:11px;line-height:1.25;color:#5C5853;white-space:nowrap}
 .k-thumb{width:64px;padding:6px 4px 5px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:3px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;line-height:1.2;color:#45423E}
 .k-thumb img{height:54px;width:auto;display:block}
 .k-thumb.is-on{border-color:#1A1A1A;color:#1A1A1A}
-@media (max-width:760px){.k-thumbs{left:auto;right:12px;bottom:12px;gap:8px}.k-thumb{width:64px;padding:5px 3px 4px;font-size:10.5px}.k-thumb img{height:44px}}
+@media (max-width:760px){.k-thumbs{left:auto;right:12px;bottom:12px;gap:8px}.k-thumb{width:64px;padding:5px 3px 4px;font-size:10.5px}.k-thumbs{align-items:flex-end}.k-thumbs-label{white-space:normal;max-width:72px;text-align:right;font-size:10.5px}.k-thumb img{height:44px}}
 .k-sec{padding-top:76px;padding-bottom:76px}
 .k-sec-s{padding-top:44px;padding-bottom:44px}
 @media (max-width:760px){.k-sec{padding-top:44px;padding-bottom:44px}.k-sec-s{padding-top:30px;padding-bottom:30px}}
@@ -94,7 +89,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 
 <main id="top" class="k-hero" style="max-width: 1240px; margin: 0 auto; box-sizing: border-box">
 
-<p class="k-eyebrow" style="margin: 0; font-size: 14px; color: #6B6762">Hair Loss Prevention System</p>
 
 <div class="k-head" style="display: flex; flex-direction: column">
 <h1 class="k-h1" style="margin: 0; font-weight: 300; line-height: 1.14; letter-spacing: -0.01em; color: #1A1A1A; text-wrap: balance">The K-beauty peptide system for hair loss</h1>
@@ -107,7 +101,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <img data-show="loading" src="assets/shampoo.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
 <canvas class="klara-cv" width="248" height="648" role="img" aria-label="Klara Hair Loss Prevention bottle, 30 mL, amber with black cap. Drag to turn." style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
 </div>
-<div class="k-thumbs" role="group" aria-label="View bottle">
+<div class="k-thumbs" role="group" aria-label="One package includes">
+<p class="k-thumbs-label" aria-hidden="true">One package includes</p>
 <button type="button" class="k-thumb is-on" aria-pressed="true" data-act="pickS" data-variant="s">
 <img src="assets/shampoo.webp" alt="">
 <span>Shampoo</span>
@@ -124,13 +119,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <img class="klara-sheet" src="assets/spin-3.webp" alt="">
 <img class="klara-sheet" src="assets/spin-4.webp" alt="">
 </div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1A1A1A">One package includes:</p>
-<ul class="k-includes">
-<li><img src="assets/shampoo.webp" alt=""><span style="display: flex; flex-direction: column; line-height: 1.35"><span style="font-size: 15px; color: #1A1A1A">Hair Loss Prevention Shampoo</span><span style="font-size: 13px; color: #6B6762">1 bottle · 30 mL</span></span></li>
-<li><img src="assets/treatment.webp" alt=""><span style="display: flex; flex-direction: column; line-height: 1.35"><span style="font-size: 15px; color: #1A1A1A">Hair Loss Prevention Treatment</span><span style="font-size: 13px; color: #6B6762">1 bottle · 30 mL</span></span></li>
-</ul>
 </div>
 </div>
 
