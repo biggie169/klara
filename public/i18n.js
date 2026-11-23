@@ -16,12 +16,13 @@ window.KLARA_I18N = {
 
   en: {
     metaTitle: "Klara Hair Loss Prevention System: K-beauty peptide shampoo for thinning hair",
-    metaDesc: "K-beauty peptide shampoo and treatment for thinning hair and shedding, made in Korea by NIBEC. No minoxidil, no finasteride. €100, or €85 a month on subscription.",
+    metaDesc: "K-beauty peptide shampoo and treatment for women and men with thinning hair and shedding, made in Korea by NIBEC. No minoxidil, no finasteride. €100, or €85 a month on subscription.",
     faqKicker: "Questions",
     faqH: "Hair loss, answered.",
     faqLede: "Shedding, thinning, minoxidil, finasteride: what they mean and where Klara fits.",
     faq: [
-      ["Who is Klara for?", "For women and men who notice more hair in the shower or on the brush, a wider parting or thinning at the crown, and want a daily scalp routine without medicines."],
+      ["Who is Klara for?", "For women and men. Thinning hair is common in women too, often as a wider parting, a thinner ponytail, or shedding after pregnancy, menopause or a stressful time. If you see more hair in the shower or on the brush and want a daily scalp routine without medicines, Klara is for you."],
+      ["Will my hair look fuller?", "The shampoo cleans the scalp without weighing hair down, and the treatment smooths and softens the lengths, so hair looks and feels fuller, with more body and a softer texture. [NIBEC consumer test: how many people noticed more volume, after how many weeks]"],
       ["How is Klara different from minoxidil and finasteride?", "Minoxidil (sold as Regaine or Rogaine) and finasteride (Propecia) are medicines for androgenetic alopecia and are used under medical advice. Klara is cosmetic scalp care: a peptide shampoo and treatment with no minoxidil, no finasteride and no hormones. If you already use either, ask your doctor before adding anything new."],
       ["What do anagen and telogen mean?", "Every hair cycles through a growth phase (anagen), a short transition (catagen) and a resting phase (telogen), after which it sheds. Losing 50 to 100 hairs a day is normal. Stress, illness or giving birth can push many hairs into telogen at once, which shows up months later as heavy shedding, known as telogen effluvium."],
       ["How does Klara compare with other hair loss shampoos?", "Many well-known hair loss shampoos are built around one active ingredient: caffeine in Alpecin, aminexil in Vichy Dercos. Klara is built on NIBEC’s own patented peptides from regenerative research, and pairs the shampoo with a treatment you leave on for a few minutes."],
@@ -34,7 +35,7 @@ window.KLARA_I18N = {
     pkg: 'One package includes',
     buy: 'Buy',
     tiers: 'Save 10% on 6 packages, 15% on 12.',
-    desc: "A two-step peptide system for thinning hair and shedding: a shampoo, then a treatment. Made in Korea by NIBEC and drawn from twenty years of regenerative peptide research, with no minoxidil and no finasteride. Part of the Klara skincare line, and available in Europe for the first time.",
+    desc: "A two-step peptide system for thinning hair and shedding, made for women and men: a shampoo, then a treatment, that leave hair feeling fuller, softer and easier to style. Made in Korea by NIBEC and drawn from twenty years of regenerative peptide research, with no minoxidil and no finasteride. Part of the Klara skincare line, and available in Europe for the first time.",
     subscribe: 'Subscribe',
     subText: 'Subscribe and save 15%: the system is delivered every month for {sub} per month.',
     ingredients: 'Ingredients',
@@ -104,12 +105,13 @@ window.KLARA_I18N = {
 
   de: {
     metaTitle: "Klara Hair Loss Prevention System: K-Beauty-Peptidshampoo bei dünner werdendem Haar",
-    metaDesc: "K-Beauty-Peptidshampoo und Treatment bei dünner werdendem Haar und Haarausfall, hergestellt in Korea von NIBEC. Ohne Minoxidil, ohne Finasterid. 100 € oder 85 € im Monat im Abo.",
+    metaDesc: "K-Beauty-Peptidshampoo und Treatment für Frauen und Männer bei dünner werdendem Haar und Haarausfall, hergestellt in Korea von NIBEC. Ohne Minoxidil, ohne Finasterid. 100 € oder 85 € im Monat im Abo.",
     faqKicker: "Fragen",
     faqH: "Haarausfall, kurz erklärt.",
     faqLede: "Haarausfall, dünnes Haar, Minoxidil, Finasterid: was dahintersteckt und wo Klara ins Spiel kommt.",
     faq: [
-      ["Für wen ist Klara?", "Für Frauen und Männer, die mehr Haare in der Dusche oder in der Bürste finden, einen breiteren Scheitel oder lichteres Haar am Oberkopf bemerken und eine tägliche Kopfhautpflege ohne Arzneimittel suchen."],
+      ["Für wen ist Klara?", "Für Frauen und Männer. Auch viele Frauen kennen dünner werdendes Haar, oft als breiteren Scheitel, dünneren Zopf oder Haarausfall nach einer Schwangerschaft, in den Wechseljahren oder nach einer stressigen Zeit. Wenn du mehr Haare in der Dusche oder in der Bürste findest und eine tägliche Kopfhautpflege ohne Arzneimittel suchst, ist Klara für dich."],
+      ["Sieht mein Haar damit voller aus?", "Das Shampoo reinigt die Kopfhaut, ohne das Haar zu beschweren, und das Treatment macht die Längen glatt und geschmeidig. So sieht das Haar voller aus und fühlt sich auch so an, mit mehr Fülle und einer weicheren Textur. [NIBEC-Verbrauchertest: wie viele Personen mehr Volumen bemerkt haben und nach wie vielen Wochen]"],
       ["Was unterscheidet Klara von Minoxidil und Finasterid?", "Minoxidil (z. B. Regaine) und Finasterid (z. B. Propecia) sind Arzneimittel gegen erblich bedingten Haarausfall (androgenetische Alopezie) und werden nach ärztlicher Beratung angewendet. Klara ist kosmetische Kopfhautpflege: ein Peptidshampoo mit Treatment, ohne Minoxidil, ohne Finasterid und ohne Hormone. Wenn du eines davon schon verwendest, sprich vor jeder Ergänzung mit deiner Ärztin oder deinem Arzt."],
       ["Was bedeuten Anagen und Telogen?", "Jedes Haar durchläuft eine Wachstumsphase (Anagen), eine kurze Übergangsphase (Katagen) und eine Ruhephase (Telogen), nach der es ausfällt. 50 bis 100 Haare am Tag zu verlieren, ist normal. Stress, Krankheit oder eine Geburt können viele Haare gleichzeitig in die Telogenphase schicken; Monate später zeigt sich das als starker Haarausfall, das sogenannte telogene Effluvium."],
       ["Wie schneidet Klara im Vergleich zu anderen Shampoos gegen Haarausfall ab?", "Viele bekannte Shampoos gegen Haarausfall setzen auf einen einzelnen Wirkstoff: Coffein bei Alpecin, Aminexil bei Vichy Dercos. Klara basiert auf NIBECs eigenen patentierten Peptiden aus der regenerativen Forschung und kombiniert das Shampoo mit einem Treatment, das ein paar Minuten einwirkt."],
@@ -122,7 +124,7 @@ window.KLARA_I18N = {
     pkg: 'Ein Paket enthält',
     buy: 'Kaufen',
     tiers: '10 % sparen bei 6 Paketen, 15 % bei 12.',
-    desc: "Ein zweistufiges Peptidsystem bei dünner werdendem Haar und vermehrtem Haarausfall: erst ein Shampoo, dann ein Treatment. Hergestellt in Korea von NIBEC, mit zwanzig Jahren Forschung an regenerativen Peptiden dahinter, ohne Minoxidil und ohne Finasterid. Teil der Klara-Skincare-Linie und jetzt zum ersten Mal in Europa erhältlich.",
+    desc: "Ein zweistufiges Peptidsystem bei dünner werdendem Haar und vermehrtem Haarausfall, für Frauen und Männer: erst ein Shampoo, dann ein Treatment, für Haar, das sich voller, weicher und leichter zu stylen anfühlt. Hergestellt in Korea von NIBEC, mit zwanzig Jahren Forschung an regenerativen Peptiden dahinter, ohne Minoxidil und ohne Finasterid. Teil der Klara-Skincare-Linie und jetzt zum ersten Mal in Europa erhältlich.",
     subscribe: 'Abo',
     subText: 'Im Abo 15 % sparen: Das System kommt jeden Monat zu dir, für {sub} pro Monat.',
     ingredients: 'Inhaltsstoffe',
@@ -192,12 +194,13 @@ window.KLARA_I18N = {
 
   fr: {
     metaTitle: "Klara Hair Loss Prevention System : shampoing K-beauty aux peptides pour cheveux clairsemés",
-    metaDesc: "Shampoing et soin K-beauty aux peptides contre la chute et l’affinement des cheveux, fabriqués en Corée par NIBEC. Sans minoxidil ni finastéride. 100 €, ou 85 € par mois en abonnement.",
+    metaDesc: "Shampoing et soin K-beauty aux peptides pour femmes et hommes, contre la chute et l’affinement des cheveux, fabriqués en Corée par NIBEC. Sans minoxidil ni finastéride. 100 €, ou 85 € par mois en abonnement.",
     faqKicker: "Questions",
     faqH: "La chute des cheveux, en clair.",
     faqLede: "Chute, cheveux clairsemés, minoxidil, finastéride : ce que ces mots veulent dire et la place de Klara.",
     faq: [
-      ["À qui s’adresse Klara ?", "Aux femmes et aux hommes qui retrouvent plus de cheveux sous la douche ou dans la brosse, voient leur raie s’élargir ou le sommet du crâne s’éclaircir, et veulent une routine quotidienne pour le cuir chevelu, sans médicament."],
+      ["À qui s’adresse Klara ?", "Aux femmes comme aux hommes. L’affinement des cheveux touche aussi beaucoup de femmes : une raie qui s’élargit, une queue de cheval plus fine, ou une chute après une grossesse, à la ménopause ou après une période de stress. Si vous retrouvez plus de cheveux sous la douche ou dans la brosse et voulez une routine quotidienne pour le cuir chevelu, sans médicament, Klara est fait pour vous."],
+      ["Mes cheveux paraîtront-ils plus fournis ?", "Le shampoing nettoie le cuir chevelu sans alourdir les cheveux, et le soin lisse et assouplit les longueurs : les cheveux paraissent plus fournis et le sont aussi au toucher, avec plus de volume et une texture plus douce. [Test consommateurs NIBEC : combien de personnes ont remarqué plus de volume, et après combien de semaines]"],
       ["En quoi Klara diffère-t-il du minoxidil et du finastéride ?", "Le minoxidil (vendu sous le nom de Regaine ou Rogaine) et le finastéride (Propecia) sont des médicaments contre l’alopécie androgénétique, utilisés sur avis médical. Klara est un soin cosmétique du cuir chevelu : un shampoing et un soin aux peptides, sans minoxidil, sans finastéride et sans hormones. Si vous utilisez déjà l’un d’eux, demandez l’avis de votre médecin avant d’ajouter quoi que ce soit."],
       ["Que veulent dire anagène et télogène ?", "Chaque cheveu passe par une phase de croissance (anagène), une courte transition (catagène) et une phase de repos (télogène), au terme de laquelle il tombe. Perdre 50 à 100 cheveux par jour est normal. Le stress, une maladie ou un accouchement peuvent faire passer de nombreux cheveux en phase télogène en même temps, ce qui se traduit quelques mois plus tard par une chute importante : l’effluvium télogène."],
       ["Comment Klara se compare-t-il aux autres shampoings antichute ?", "Beaucoup de shampoings antichute connus reposent sur un seul actif : la caféine chez Alpecin, l’aminexil chez Vichy Dercos. Klara repose sur les peptides brevetés de NIBEC, issus de la recherche régénérative, et associe le shampoing à un soin qui pose quelques minutes."],
@@ -210,7 +213,7 @@ window.KLARA_I18N = {
     pkg: 'Un pack comprend',
     buy: 'Acheter',
     tiers: '−10 % dès 6 packs, −15 % pour 12.',
-    desc: "Un système aux peptides en deux étapes contre l’affinement et la chute des cheveux : d’abord un shampoing, puis un soin. Fabriqué en Corée par NIBEC, fort de vingt ans de recherche sur les peptides régénérants, sans minoxidil ni finastéride. Il fait partie de la gamme de soins Klara et arrive en Europe pour la première fois.",
+    desc: "Un système aux peptides en deux étapes contre l’affinement et la chute des cheveux, pour les femmes comme pour les hommes : d’abord un shampoing, puis un soin, pour des cheveux qui paraissent plus fournis, plus doux et plus faciles à coiffer. Fabriqué en Corée par NIBEC, fort de vingt ans de recherche sur les peptides régénérants, sans minoxidil ni finastéride. Il fait partie de la gamme de soins Klara et arrive en Europe pour la première fois.",
     subscribe: 'Abonnement',
     subText: 'Abonnez-vous et économisez 15 % : le système vous est livré chaque mois pour {sub} par mois.',
     ingredients: 'Ingrédients',
@@ -280,12 +283,13 @@ window.KLARA_I18N = {
 
   es: {
     metaTitle: "Klara Hair Loss Prevention System: champú K-beauty con péptidos para el cabello que se debilita",
-    metaDesc: "Champú y tratamiento K-beauty con péptidos para la caída y el debilitamiento del cabello, fabricados en Corea por NIBEC. Sin minoxidil ni finasterida. 100 €, o 85 € al mes con suscripción.",
+    metaDesc: "Champú y tratamiento K-beauty con péptidos para mujeres y hombres, para la caída y el debilitamiento del cabello, fabricados en Corea por NIBEC. Sin minoxidil ni finasterida. 100 €, o 85 € al mes con suscripción.",
     faqKicker: "Preguntas",
     faqH: "La caída del cabello, explicada.",
     faqLede: "Caída, cabello fino, minoxidil, finasterida: qué significan y dónde encaja Klara.",
     faq: [
-      ["¿Para quién es Klara?", "Para mujeres y hombres que notan más pelo en la ducha o en el cepillo, una raya más ancha o menos densidad en la coronilla, y quieren una rutina diaria para el cuero cabelludo sin medicamentos."],
+      ["¿Para quién es Klara?", "Para mujeres y hombres. El cabello también se debilita en muchas mujeres: una raya más ancha, una coleta más fina o caída después del embarazo, en la menopausia o tras una época de estrés. Si notas más pelo en la ducha o en el cepillo y quieres una rutina diaria para el cuero cabelludo sin medicamentos, Klara es para ti."],
+      ["¿Mi pelo se verá con más volumen?", "El champú limpia el cuero cabelludo sin apelmazar el cabello, y el tratamiento suaviza y alisa los largos, así que el pelo se ve y se siente con más cuerpo, más volumen y una textura más suave. [Test de consumidores de NIBEC: cuántas personas notaron más volumen y después de cuántas semanas]"],
       ["¿En qué se diferencia Klara del minoxidil y la finasterida?", "El minoxidil (que se vende como Regaine o Rogaine) y la finasterida (Propecia) son medicamentos para la alopecia androgenética y se usan bajo consejo médico. Klara es cuidado cosmético del cuero cabelludo: un champú y un tratamiento con péptidos, sin minoxidil, sin finasterida y sin hormonas. Si ya usas alguno de ellos, consulta a tu médico antes de añadir nada nuevo."],
       ["¿Qué significan anágena y telógena?", "Cada cabello pasa por una fase de crecimiento (anágena), una breve transición (catágena) y una fase de reposo (telógena), tras la cual se cae. Perder entre 50 y 100 cabellos al día es normal. El estrés, una enfermedad o el parto pueden llevar muchos cabellos a la fase telógena a la vez, y meses después se nota como una caída intensa, el llamado efluvio telógeno."],
       ["¿Cómo se compara Klara con otros champús anticaída?", "Muchos champús anticaída conocidos se basan en un solo activo: la cafeína en Alpecin, el aminexil en Vichy Dercos. Klara se basa en los péptidos patentados de NIBEC, fruto de la investigación regenerativa, y combina el champú con un tratamiento que se deja actuar unos minutos."],
@@ -298,7 +302,7 @@ window.KLARA_I18N = {
     pkg: 'Cada pack incluye',
     buy: 'Comprar',
     tiers: 'Ahorra un 10 % con 6 packs y un 15 % con 12.',
-    desc: "Un sistema de péptidos en dos pasos para el cabello que se debilita y se cae: primero un champú, después un tratamiento. Fabricado en Corea por NIBEC, con veinte años de investigación en péptidos regenerativos detrás, sin minoxidil y sin finasterida. Forma parte de la línea de skincare Klara y llega a Europa por primera vez.",
+    desc: "Un sistema de péptidos en dos pasos para el cabello que se debilita y se cae, pensado para mujeres y hombres: primero un champú, después un tratamiento, para un cabello que se siente con más cuerpo, más suave y más fácil de peinar. Fabricado en Corea por NIBEC, con veinte años de investigación en péptidos regenerativos detrás, sin minoxidil y sin finasterida. Forma parte de la línea de skincare Klara y llega a Europa por primera vez.",
     subscribe: 'Suscripción',
     subText: 'Suscríbete y ahorra un 15 %: recibes el sistema cada mes por {sub} al mes.',
     ingredients: 'Ingredientes',
@@ -368,12 +372,13 @@ window.KLARA_I18N = {
 
   it: {
     metaTitle: "Klara Hair Loss Prevention System: shampoo K-beauty ai peptidi per capelli che si diradano",
-    metaDesc: "Shampoo e trattamento K-beauty ai peptidi per capelli che si diradano e cadono, prodotti in Corea da NIBEC. Senza minoxidil né finasteride. 100 €, oppure 85 € al mese in abbonamento.",
+    metaDesc: "Shampoo e trattamento K-beauty ai peptidi per donne e uomini, per capelli che si diradano e cadono, prodotti in Corea da NIBEC. Senza minoxidil né finasteride. 100 €, oppure 85 € al mese in abbonamento.",
     faqKicker: "Domande",
     faqH: "La caduta dei capelli, spiegata.",
     faqLede: "Caduta, diradamento, minoxidil, finasteride: cosa significano e dove si colloca Klara.",
     faq: [
-      ["A chi è rivolto Klara?", "A donne e uomini che trovano più capelli nella doccia o nella spazzola, notano la riga più larga o il diradamento sulla sommità del capo, e vogliono una routine quotidiana per la cute senza farmaci."],
+      ["A chi è rivolto Klara?", "A donne e uomini. Il diradamento riguarda anche molte donne: una riga più larga, una coda più sottile, o una caduta dopo la gravidanza, in menopausa o dopo un periodo di stress. Se trovi più capelli nella doccia o nella spazzola e vuoi una routine quotidiana per la cute senza farmaci, Klara fa per te."],
+      ["I miei capelli sembreranno più folti?", "Lo shampoo deterge la cute senza appesantire i capelli e il trattamento leviga e ammorbidisce le lunghezze: i capelli appaiono più folti e lo sono anche al tatto, con più corpo e una texture più morbida. [Test consumatori NIBEC: quante persone hanno notato più volume e dopo quante settimane]"],
       ["In cosa Klara è diverso da minoxidil e finasteride?", "Il minoxidil (venduto come Regaine o Rogaine) e la finasteride (Propecia) sono farmaci per l’alopecia androgenetica e si usano su consiglio medico. Klara è un trattamento cosmetico per la cute: uno shampoo e un trattamento ai peptidi, senza minoxidil, senza finasteride e senza ormoni. Se usi già uno dei due, chiedi al tuo medico prima di aggiungere altro."],
       ["Cosa significano anagen e telogen?", "Ogni capello attraversa una fase di crescita (anagen), una breve fase di transizione (catagen) e una fase di riposo (telogen), al termine della quale cade. Perdere da 50 a 100 capelli al giorno è normale. Stress, malattie o il parto possono spingere molti capelli in fase telogen contemporaneamente: mesi dopo si nota una caduta abbondante, il cosiddetto telogen effluvium."],
       ["Come si confronta Klara con altri shampoo anticaduta?", "Molti shampoo anticaduta noti puntano su un solo principio attivo: la caffeina in Alpecin, l’aminexil in Vichy Dercos. Klara si basa sui peptidi brevettati di NIBEC, nati dalla ricerca rigenerativa, e abbina lo shampoo a un trattamento da lasciare in posa per qualche minuto."],
@@ -386,7 +391,7 @@ window.KLARA_I18N = {
     pkg: 'Ogni confezione include',
     buy: 'Acquista',
     tiers: 'Risparmi il 10% con 6 confezioni, il 15% con 12.',
-    desc: "Un sistema ai peptidi in due fasi per capelli che si diradano e cadono: prima uno shampoo, poi un trattamento. Prodotto in Corea da NIBEC e frutto di vent’anni di ricerca sui peptidi rigenerativi, senza minoxidil e senza finasteride. Fa parte della linea skincare Klara ed è disponibile in Europa per la prima volta.",
+    desc: "Un sistema ai peptidi in due fasi per capelli che si diradano e cadono, pensato per donne e uomini: prima uno shampoo, poi un trattamento, per capelli che appaiono più folti, più morbidi e più facili da acconciare. Prodotto in Corea da NIBEC e frutto di vent’anni di ricerca sui peptidi rigenerativi, senza minoxidil e senza finasteride. Fa parte della linea skincare Klara ed è disponibile in Europa per la prima volta.",
     subscribe: 'Abbonamento',
     subText: 'Abbonati e risparmia il 15%: ricevi il sistema ogni mese a {sub} al mese.',
     ingredients: 'Ingredienti',
@@ -456,12 +461,13 @@ window.KLARA_I18N = {
 
   nl: {
     metaTitle: "Klara Hair Loss Prevention System: K-beauty peptideshampoo bij dunner wordend haar",
-    metaDesc: "K-beauty peptideshampoo en treatment bij dunner wordend haar en haaruitval, gemaakt in Korea door NIBEC. Zonder minoxidil, zonder finasteride. € 100, of € 85 per maand met een abonnement.",
+    metaDesc: "K-beauty peptideshampoo en treatment voor vrouwen en mannen, bij dunner wordend haar en haaruitval, gemaakt in Korea door NIBEC. Zonder minoxidil, zonder finasteride. € 100, of € 85 per maand met een abonnement.",
     faqKicker: "Vragen",
     faqH: "Haaruitval, helder uitgelegd.",
     faqLede: "Uitval, dunner haar, minoxidil, finasteride: wat het betekent en waar Klara past.",
     faq: [
-      ["Voor wie is Klara?", "Voor vrouwen en mannen die meer haar in de douche of in de borstel vinden, een bredere scheiding of dunner haar op de kruin zien, en een dagelijkse hoofdhuidroutine zonder medicijnen willen."],
+      ["Voor wie is Klara?", "Voor vrouwen én mannen. Ook veel vrouwen krijgen dunner haar: een bredere scheiding, een dunnere paardenstaart, of haaruitval na een zwangerschap, in de overgang of na een stressvolle periode. Vind je meer haar in de douche of in de borstel en wil je een dagelijkse hoofdhuidroutine zonder medicijnen, dan is Klara voor jou."],
+      ["Ziet mijn haar er voller uit?", "De shampoo reinigt de hoofdhuid zonder het haar te verzwaren, en de treatment maakt de lengtes glad en soepel. Zo ziet het haar er voller uit en voelt het ook zo, met meer volume en een zachtere textuur. [NIBEC-consumententest: hoeveel mensen meer volume merkten en na hoeveel weken]"],
       ["Wat is het verschil tussen Klara en minoxidil of finasteride?", "Minoxidil (verkocht als Regaine of Rogaine) en finasteride (Propecia) zijn medicijnen tegen androgenetische alopecia en worden op medisch advies gebruikt. Klara is cosmetische hoofdhuidverzorging: een peptideshampoo en treatment zonder minoxidil, zonder finasteride en zonder hormonen. Gebruik je een van beide al, overleg dan met je arts voordat je iets toevoegt."],
       ["Wat betekenen anageen en telogeen?", "Elke haar doorloopt een groeifase (anageen), een korte overgangsfase (katageen) en een rustfase (telogeen), waarna hij uitvalt. 50 tot 100 haren per dag verliezen is normaal. Stress, ziekte of een bevalling kunnen veel haren tegelijk naar de telogene fase duwen; maanden later zie je dat als flinke haaruitval, telogeen effluvium genoemd."],
       ["Hoe verhoudt Klara zich tot andere shampoos tegen haaruitval?", "Veel bekende shampoos tegen haaruitval draaien om één werkzame stof: cafeïne bij Alpecin, aminexil bij Vichy Dercos. Klara is gebouwd op de eigen gepatenteerde peptiden van NIBEC uit regeneratief onderzoek, en combineert de shampoo met een treatment die je een paar minuten laat intrekken."],
@@ -474,7 +480,7 @@ window.KLARA_I18N = {
     pkg: 'Eén pakket bevat',
     buy: 'Kopen',
     tiers: 'Bespaar 10% bij 6 pakketten, 15% bij 12.',
-    desc: "Een peptidesysteem in twee stappen bij dunner wordend haar en haaruitval: eerst een shampoo, dan een treatment. Gemaakt in Korea door NIBEC, op basis van twintig jaar onderzoek naar regeneratieve peptiden, zonder minoxidil en zonder finasteride. Onderdeel van de Klara-skincarelijn en nu voor het eerst verkrijgbaar in Europa.",
+    desc: "Een peptidesysteem in twee stappen bij dunner wordend haar en haaruitval, voor vrouwen én mannen: eerst een shampoo, dan een treatment, voor haar dat voller, zachter en makkelijker in model aanvoelt. Gemaakt in Korea door NIBEC, op basis van twintig jaar onderzoek naar regeneratieve peptiden, zonder minoxidil en zonder finasteride. Onderdeel van de Klara-skincarelijn en nu voor het eerst verkrijgbaar in Europa.",
     subscribe: 'Abonnement',
     subText: 'Neem een abonnement en bespaar 15%: je krijgt het systeem elke maand voor {sub} per maand.',
     ingredients: 'Ingrediënten',
@@ -544,12 +550,13 @@ window.KLARA_I18N = {
 
   pl: {
     metaTitle: "Klara Hair Loss Prevention System: peptydowy szampon K-beauty na przerzedzone włosy",
-    metaDesc: "Peptydowy szampon i kuracja K-beauty na przerzedzanie i wypadanie włosów, produkowane w Korei przez NIBEC. Bez minoksydylu i finasterydu. 100 € lub 85 € miesięcznie w subskrypcji.",
+    metaDesc: "Peptydowy szampon i kuracja K-beauty dla kobiet i mężczyzn, na przerzedzanie i wypadanie włosów, produkowane w Korei przez NIBEC. Bez minoksydylu i finasterydu. 100 € lub 85 € miesięcznie w subskrypcji.",
     faqKicker: "Pytania",
     faqH: "Wypadanie włosów w pigułce.",
     faqLede: "Wypadanie, przerzedzanie, minoksydyl, finasteryd: co oznaczają i gdzie w tym wszystkim jest Klara.",
     faq: [
-      ["Dla kogo jest Klara?", "Dla kobiet i mężczyzn, którzy widzą więcej włosów pod prysznicem albo na szczotce, szerszy przedziałek lub przerzedzenie na czubku głowy, i chcą codziennej pielęgnacji skóry głowy bez leków."],
+      ["Dla kogo jest Klara?", "Dla kobiet i mężczyzn. Przerzedzanie włosów dotyczy też wielu kobiet: szerszy przedziałek, cieńszy kucyk albo wypadanie po ciąży, w okresie menopauzy lub po stresującym czasie. Jeśli widzisz więcej włosów pod prysznicem albo na szczotce i chcesz codziennej pielęgnacji skóry głowy bez leków, Klara jest dla Ciebie."],
+      ["Czy moje włosy będą wyglądać na gęstsze?", "Szampon oczyszcza skórę głowy, nie obciążając włosów, a kuracja wygładza i zmiękcza długość. Dzięki temu włosy wyglądają na pełniejsze i takie są w dotyku: mają więcej objętości i miększą teksturę. [Test konsumencki NIBEC: ile osób zauważyło większą objętość i po ilu tygodniach]"],
       ["Czym Klara różni się od minoksydylu i finasterydu?", "Minoksydyl (sprzedawany np. jako Regaine lub Rogaine) i finasteryd (Propecia) to leki na łysienie androgenowe, stosowane po konsultacji z lekarzem. Klara to kosmetyczna pielęgnacja skóry głowy: peptydowy szampon i kuracja bez minoksydylu, bez finasterydu i bez hormonów. Jeśli już stosujesz któryś z tych leków, zanim dodasz coś nowego, porozmawiaj z lekarzem."],
       ["Co oznaczają anagen i telogen?", "Każdy włos przechodzi fazę wzrostu (anagen), krótką fazę przejściową (katagen) i fazę spoczynku (telogen), po której wypada. Utrata 50–100 włosów dziennie jest normalna. Stres, choroba lub poród mogą jednocześnie wprowadzić wiele włosów w fazę telogenu, co po kilku miesiącach objawia się silnym wypadaniem, czyli łysieniem telogenowym."],
       ["Jak Klara wypada na tle innych szamponów przeciw wypadaniu włosów?", "Wiele znanych szamponów przeciw wypadaniu włosów opiera się na jednym składniku aktywnym: kofeinie w Alpecinie, aminexilu w Vichy Dercos. Klara bazuje na opatentowanych peptydach NIBEC, wywodzących się z badań nad regeneracją, i łączy szampon z kuracją pozostawianą na kilka minut."],
@@ -562,7 +569,7 @@ window.KLARA_I18N = {
     pkg: 'Jeden zestaw zawiera',
     buy: 'Kup',
     tiers: 'Oszczędzasz 10% przy 6 zestawach i 15% przy 12.',
-    desc: "Dwuetapowy system peptydowy na przerzedzanie i wypadanie włosów: najpierw szampon, potem kuracja. Produkowany w Korei przez NIBEC i oparty na dwudziestu latach badań nad peptydami regeneracyjnymi, bez minoksydylu i bez finasterydu. Należy do linii skincare Klara i po raz pierwszy trafia do Europy.",
+    desc: "Dwuetapowy system peptydowy na przerzedzanie i wypadanie włosów, dla kobiet i mężczyzn: najpierw szampon, potem kuracja, dzięki którym włosy są w dotyku pełniejsze, miększe i łatwiej się układają. Produkowany w Korei przez NIBEC i oparty na dwudziestu latach badań nad peptydami regeneracyjnymi, bez minoksydylu i bez finasterydu. Należy do linii skincare Klara i po raz pierwszy trafia do Europy.",
     subscribe: 'Subskrypcja',
     subText: 'Zamów w subskrypcji i oszczędzaj 15%: system przychodzi co miesiąc za {sub} miesięcznie.',
     ingredients: 'Skład',
