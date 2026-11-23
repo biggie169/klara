@@ -15,7 +15,7 @@
       bag: bag,
       qty: state.qty,
       sys: bag,
-      total: eur(PRICE * state.qty),
+      total: eur(PRICE) + (state.qty > 1 ? ' \u00D7 ' + state.qty : ''),
       bagTotal: eur((state.sub ? SUB_PRICE : PRICE) * bag) + (state.sub && bag > 0 ? ' / month' : ''),
       loading: !state.ready,
       bagOpen: state.bagOpen,
