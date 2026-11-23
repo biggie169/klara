@@ -65,6 +65,7 @@ button{font-family:inherit}
 .k-stats-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:760px){.k-sci{grid-template-columns:minmax(0,1fr);row-gap:24px}.k-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.k-stats-3{grid-template-columns:minmax(0,1fr);gap:28px}}
 html{scrollbar-gutter:stable}
+.k-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .k-kicker{font-size:15px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
 @media (min-width:761px){.k-kicker{font-size:16px}}
 .k-drawer{position:fixed;inset:0;z-index:50;display:flex;visibility:hidden;pointer-events:none;transition:visibility 0s linear .4s}
@@ -232,20 +233,26 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </div>
 <p class="k-sci-lede" style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 52ch">Use the two together each time you wash your hair. The whole routine takes a few minutes in the shower.</p>
 <div class="k-stats k-stats-3" style="border-top: 1px solid #D5D1C9; padding-top: 32px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 1</p>
-<h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Shampoo</h3>
-<p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">Take an appropriate amount and apply it to your scalp and hair. Gently massage, then rinse thoroughly with clean water.</p>
+<div style="display: flex; align-items: flex-start; gap: 18px">
+<p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">1</p>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 1: </span>Shampoo</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">Take an appropriate amount and apply it to your scalp and hair. Gently massage, then rinse thoroughly with clean water.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 2</p>
-<h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Treatment</h3>
-<p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">After shampooing, apply an appropriate amount to your hair and gently massage.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; color: #8C4A12">Step 3</p>
-<h3 style="margin: 0; font-weight: 300; font-size: 30px; line-height: 1.1; color: #1A1A1A">Rinse</h3>
-<p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #5C5853; max-width: 36ch">Leave the treatment on for 2–3 minutes, then rinse thoroughly with lukewarm water.</p>
+<div style="display: flex; align-items: flex-start; gap: 18px">
+<p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">2</p>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 2: </span>Treatment</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">After shampooing, apply an appropriate amount to your hair and gently massage.</p>
+</div>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 18px">
+<p aria-hidden="true" style="margin: 0; flex: none; width: 34px; font-weight: 300; font-size: 46px; line-height: 1; color: #8C4A12">3</p>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; padding-top: 4px">
+<h3 style="margin: 0; font-weight: 500; font-size: 18px; line-height: 1.3; color: #1A1A1A"><span class="k-sr">Step 3: </span>Rinse</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5853; max-width: 34ch">Leave the treatment on for 2–3 minutes, then rinse thoroughly with lukewarm water.</p>
+</div>
 </div>
 </div>
 </div>
