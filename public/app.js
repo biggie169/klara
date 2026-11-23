@@ -3,6 +3,7 @@
 
   var PRICE = 100; // one system = shampoo + treatment
   var SUB_PRICE = 85; // per month, 15% off
+  var MAX = 12; // a year's supply, per order
   var state = { qty: 1, sys: 0, variant: 's', sub: false, bagOpen: false, menuOpen: false, ready: false };
   var spin = { N: 192, a: 0, v: 0, drawn: -1, dirty: false, drag: null, running: false };
 
@@ -64,10 +65,10 @@
     openMenu: function () { set({ menuOpen: true }); },
     closeMenu: function () { set({ menuOpen: false }); },
     closeBag: function () { set({ bagOpen: false }); },
-    inc: function () { set({ qty: Math.min(9, state.qty + 1) }); },
+    inc: function () { set({ qty: Math.min(MAX, state.qty + 1) }); },
     dec: function () { set({ qty: Math.max(1, state.qty - 1) }); },
-    add: function () { set({ sys: state.sys + state.qty, sub: false, bagOpen: true }); },
-    addBoth: function () { set({ sys: state.sys + 1, sub: false, bagOpen: true }); },
+    add: function () { set({ sys: Math.min(MAX, state.sys + state.qty), sub: false, bagOpen: true }); },
+    addBoth: function () { set({ sys: Math.min(MAX, state.sys + 1), sub: false, bagOpen: true }); },
     subBoth: function () { set({ sys: Math.max(1, state.sys), sub: true, bagOpen: true }); },
     rm: function () { set({ sys: 0, sub: false }); },
     pickS: function () { pick('s'); },
