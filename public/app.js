@@ -8,7 +8,10 @@
   var spin = { N: 192, a: 0, v: 0, drawn: -1, dirty: false, drag: null, running: false };
 
   function $all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
-  function eur(n) { return '€' + n; }
+  function eur(n) { return '€' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  // One-time tiers: 6 packages (half a year) save 10%, 12 (a year) save 15%.
+  function unit(n) { return n >= 12 ? 85 : n >= 6 ? 90 : PRICE; }
+  function saving(n) { return n >= 12 ? 15 : n >= 6 ? 10 : 0; }
 
   function vals() {
     var bag = state.sys;
@@ -16,8 +19,11 @@
       bag: bag,
       qty: state.qty,
       sys: bag,
-      total: eur(PRICE) + (state.qty > 1 ? ' \u00D7 ' + state.qty : ''),
-      bagTotal: eur((state.sub ? SUB_PRICE : PRICE) * bag) + (state.sub && bag > 0 ? ' / month' : ''),
+      total: eur(unit(state.qty)) + (state.qty > 1 ? ' \u00D7 ' + state.qty : ''),
+      totalWas: saving(state.qty) ? eur(PRICE) : '',
+      hasSaving: !!saving(state.qty),
+      bagSaving: !state.sub && saving(bag) ? ' \u00B7 save ' + saving(bag) + '%' : '',
+      bagTotal: eur((state.sub ? SUB_PRICE : unit(bag)) * bag) + (state.sub && bag > 0 ? ' / month' : ''),
       loading: !state.ready,
       bagOpen: state.bagOpen,
       menuOpen: state.menuOpen,

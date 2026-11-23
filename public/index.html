@@ -149,9 +149,11 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <button type="button" data-act="add" style="flex: 1 1 170px; height: 56px; background: #1A1A1A; color: #F6F5F2; border: 0; border-radius: 2px; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px" >
 <span>Buy</span>
 <span aria-hidden="true" style="opacity: 0.5">·</span>
+<span data-show="hasSaving" hidden style="text-decoration: line-through; opacity: 0.55" data-t="totalWas"></span>
 <span data-t="total">€100</span>
 </button>
 </div>
+<p style="margin: 0; font-size: 13.5px; color: #5C5853">Save 10% on 6 packages, 15% on 12.</p>
 </div>
 
 <p class="k-desc" style="margin: 0; line-height: 1.6; max-width: 46ch">A two-step, peptide-based system for scalp and hair: a shampoo, then a treatment. Made in Korea by NIBEC and drawn from twenty years of regenerative peptide research. Part of the Klara skincare line, and available in Europe for the first time.</p>
@@ -319,7 +321,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </div>
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <p style="margin: 0; font-size: 15px; font-weight: 500; color: #1A1A1A">Hair Loss Prevention System</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6B6762">Shampoo · 30 mL<br>Treatment · 30 mL<br>Quantity <span data-t="sys">0</span></p>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #6B6762">Shampoo · 30 mL<br>Treatment · 30 mL<br>Quantity <span data-t="sys">0</span><span data-t="bagSaving"></span></p>
 <button type="button" data-act="rm" style="align-self: flex-start; min-height: 44px; background: transparent; border: 0; padding: 0; font-size: 13px; color: #5C5853; text-decoration: underline; cursor: pointer">Remove</button>
 </div>
 <p style="margin: 0; font-size: 15px; color: #1A1A1A" data-t="bagTotal"></p>
