@@ -84,7 +84,8 @@ html{scrollbar-gutter:stable}
 .k-drawer-left .k-panel{transform:translateX(-100%)}
 .k-drawer-right .k-panel{transform:translateX(100%)}
 .k-drawer.is-open .k-panel{transform:none}
-.k-concept{position:fixed;left:0;right:0;bottom:0;z-index:40;margin:0;padding:9px 16px calc(9px + env(safe-area-inset-bottom));background:#8C4A12;color:#F6F5F2;font-size:13px;line-height:1.4;text-align:center}
+@keyframes k-pulse{0%,100%{background-color:#8C4A12}50%{background-color:#B8661F}}
+.k-concept{animation:k-pulse 2.6s ease-in-out infinite;position:fixed;left:0;right:0;bottom:0;z-index:40;margin:0;padding:9px 16px calc(9px + env(safe-area-inset-bottom));background:#8C4A12;color:#F6F5F2;font-size:13px;line-height:1.4;text-align:center}
 body{padding-bottom:var(--k-band,38px)}
 .k-lang-btn{min-width:44px;height:44px;padding:0 6px;background:transparent;border:0;color:#1A1A1A;font:inherit;font-size:13px;font-weight:500;letter-spacing:.08em;cursor:pointer}
 .k-langpop{position:absolute;top:46px;right:0;z-index:45;min-width:180px;padding:6px;background:#F6F5F2;border:1px solid #D5D1C9;border-radius:4px;box-shadow:0 12px 32px rgba(23,19,15,.12);visibility:hidden;opacity:0;transform:translateY(-10px);clip-path:inset(0 0 100% 0 round 4px);transition:opacity .3s ease,transform .45s cubic-bezier(.32,.72,0,1),clip-path .45s cubic-bezier(.32,.72,0,1),visibility 0s linear .45s}
@@ -322,7 +323,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 </nav>
 </footer>
 
-<p class="k-concept" role="note" data-i18n="concept">Concept page for review. Not a live store.</p>
+<p class="k-concept" role="note" data-i18n="concept">Concept page for review</p>
 
 <div class="k-cookie" data-open="cookieOpen" role="region" aria-label="Cookies">
 <p class="k-cookie-text"><span data-i18n="cookie">We only store what the site needs to work, like your language. With your permission, we’d also use analytics cookies to see how the site is used.</span> <button type="button" class="k-linkbtn" data-act="openPrivacy" data-i18n="privacy">Privacy &amp; cookies</button></p>
@@ -370,7 +371,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #8C
 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2.5 4.5L6 8l3.5-3.5"></path></svg>
 </span>
 </label>
-<p style="margin: auto 0 0; font-size: 13px; color: #6B6762" data-i18n="menuFoot">Free shipping · Made in Korea by NIBEC</p>
+<p style="margin: auto 0 0; font-size: 13px; color: #6B6762" data-i18n="madeBy">Made in Korea by NIBEC</p>
 </div>
 </div>
 
