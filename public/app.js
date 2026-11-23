@@ -12,8 +12,15 @@
   function load(k) { try { return window.localStorage.getItem('klara-' + k); } catch (e) { return null; } }
   function save(k, v) { try { window.localStorage.setItem('klara-' + k, v); } catch (e) {} }
 
+  var codes = I18N.langs.map(function (l) { return l.code; });
+  // Each language has its own address: / for English, /de/, /fr/ and so on.
+  function pathLang() {
+    var m = location.pathname.match(/^\/([a-z]{2})(\/|$)/);
+    return m && codes.indexOf(m[1]) >= 0 ? m[1] : null;
+  }
   function pickLang() {
-    var codes = I18N.langs.map(function (l) { return l.code; });
+    var forced = pathLang() || (location.search.match(/[?&]lang=([a-z]{2})/) || [])[1];
+    if (forced && codes.indexOf(forced) >= 0) { return forced; }
     var saved = load('lang');
     if (saved && codes.indexOf(saved) >= 0) { return saved; }
     var prefs = navigator.languages || [navigator.language || 'en'];
@@ -86,9 +93,68 @@
     if (lb) { lb.setAttribute('aria-expanded', state.langOpen ? 'true' : 'false'); }
   }
 
+  function langPath(code) { return code === 'en' ? '/' : '/' + code + '/'; }
+  function syncUrl() {
+    if (!window.history || !history.replaceState || location.protocol === 'file:') { return; }
+    var want = langPath(lang);
+    if (location.pathname !== want) { history.replaceState(null, '', want + location.hash); }
+  }
+
+  // Product and FAQ data for search engines, in the current language.
+  function structuredData() {
+    var el = document.getElementById('k-ld');
+    if (!el) { return; }
+    var url = location.origin + langPath(lang);
+    var data = [{
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'Klara Hair Loss Prevention System',
+      description: t('metaDesc'),
+      image: [location.origin + '/assets/shampoo.webp', location.origin + '/assets/treatment.webp'],
+      brand: { '@type': 'Brand', name: 'Klara' },
+      manufacturer: { '@type': 'Organization', name: 'NIBEC Co., Ltd.', url: 'https://www.nibec.co.kr' },
+      countryOfOrigin: 'KR',
+      url: url,
+      offers: {
+        '@type': 'Offer',
+        price: PRICE,
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/PreOrder',
+        url: url
+      }
+    }, {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: lang,
+      mainEntity: t('faq').map(function (qa) {
+        return { '@type': 'Question', name: qa[0], acceptedAnswer: { '@type': 'Answer', text: qa[1] } };
+      })
+    }];
+    el.textContent = JSON.stringify(data);
+  }
+
+  function buildFaq() {
+    $all('[data-faq]').forEach(function (box) {
+      box.textContent = '';
+      t('faq').forEach(function (qa) {
+        var d = document.createElement('details');
+        var s = document.createElement('summary');
+        var h = document.createElement('h3'); h.textContent = qa[0];
+        s.appendChild(h);
+        s.insertAdjacentHTML('beforeend', '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 7h10"></path><path class="plus-v" d="M7 2v10"></path></svg>');
+        var a = document.createElement('p'); a.textContent = qa[1];
+        d.appendChild(s); d.appendChild(a);
+        box.appendChild(d);
+      });
+    });
+  }
+
   // Fill every translatable spot on the page for the current language.
   function translate() {
     document.documentElement.lang = lang;
+    $all('[data-i18n-content]').forEach(function (el) { el.setAttribute('content', t(el.getAttribute('data-i18n-content'))); });
+    buildFaq();
+    structuredData();
     $all('[data-i18n]').forEach(function (el) {
       var n = el.getAttribute('data-n'), p = el.getAttribute('data-price');
       el.textContent = t(el.getAttribute('data-i18n'), { n: n, price: p && eur(+p), sub: eur(SUB_PRICE) });
@@ -178,6 +244,7 @@
       lang = el.getAttribute('data-lang');
       save('lang', lang);
       translate();
+      syncUrl();
       set({ langOpen: false, menuOpen: false });
     },
     openTerms: function () { openLegal('legal-terms'); },
@@ -205,6 +272,7 @@
     lang = e.target.value;
     save('lang', lang);
     translate();
+    syncUrl();
     render();
   });
   // Close the language list when tapping anywhere else.
@@ -320,6 +388,7 @@
   state.cookieOpen = !load('consent');
 
   translate();
+  syncUrl();
   render();
   boot();
 })();
